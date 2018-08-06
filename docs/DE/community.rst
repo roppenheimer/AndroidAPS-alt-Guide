@@ -1,3 +1,0 @@
-Hilfe in der Community
-=================
-
