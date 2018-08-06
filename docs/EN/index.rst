@@ -1,4 +1,4 @@
-AndroidAPS user documentation
+The AndroidAPS alt-guide
 ==============================================
 
 *The Artificial Panchreas system for Android*
