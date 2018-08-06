@@ -1,7 +1,7 @@
 The AndroidAPS alt-guide
 ==============================================
 
-*The Artificial Panchreas system for Android*
+*The unofficial guide to AndroidAPS: the Artificial Panchreas system for Android*
 
 If you're reading this you are almost certainly familiar with insulin pumps and continuous glucose monitors (CGMs) and you will have asked the very obvious question: "Why can't these talk to each other and manage my blood glucose?"
 
