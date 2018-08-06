@@ -2,7 +2,7 @@
 
 ## The Overview screen
 
-![Overview](../../images/Screenshot_Home_screen.png)
+![Overview](../images/Screenshot_Home_screen.png)
 
 This is the first screen you will come across when you open AndroidAPS and it contains most of the information that you will need day to day.
 
@@ -28,7 +28,7 @@ Section G: enables you to administer a bolus (normally you would use the Calcula
 
 ## The Calculator
 
-![Calculator](../../images/Screenshot_Bolus_calculator.png)
+![Calculator](../images/Screenshot_Bolus_calculator.png)
 
 
 When you want to make a meal bolus this is where you will normally make it from. 
@@ -43,7 +43,7 @@ Section C: shows the various elements that have been used to calculate the bolus
 
 ## Carbs
 
-![Carbs](../../images/Screenshot_ecarbs.png)
+![Carbs](../images/Screenshot_ecarbs.png)
 
 If you need to tell AndroidAPS about some extra carbs (or equivalent) you can do this here, without necessarily bolusing. A nice thing about this feature is that it allows you to tell the app about long lasting carbs that you might normally need an extended bolus for. These appear in your timeline in orange while they are still in the future and then change to the normal colour as time moves on. 
 
@@ -53,13 +53,13 @@ This tells the AndroidAPS algorithm that it needs to use the calculation for car
 
 ## Actions
 
-![Actions](../../images/Screenshot_actions.png) 
+![Actions](../images/Screenshot_actions.png) 
 
 This screen shows a number of commonly used actions. Most are self explanatory. TDD is Total Daily Dose and it takes you to an analysis of your insulin usage over the last few days. The HISTORY BROWSER enables you to scroll back over your history and examine your BG records, basals, and so on.
 
 ## Insulin Profile
 
-![Insulin Profile](../../images/Screenshot_insulin_profile.png)
+![Insulin Profile](../images/Screenshot_insulin_profile.png)
 
 This shows the activity profile of the insulin you have chosen. The PURPLE line shows how much insulin remains after it has been injected as it decays with time and the BLUE line shows how active it is.
 
@@ -74,13 +74,13 @@ And more at: [Exponential Insulin Curves + Fiasp](http://seemycgm.com/2017/10/21
 
 ## Pump Status
 
-![Pump Status](../../images/Screenshot_pump_Combo.png)
+![Pump Status](../images/Screenshot_pump_Combo.png)
 
 Here we see the status of the insulin pump - in this case an Accu-Chek Combo. The information displayed is self explanatory. A long press on the REFRESH button will read the data from your pump history, including your basal profile. But remember only one basal profile is supported on the Combo pump.
 
 ## Care Portal
 
-![Care Portal](../../images/Screenshot_care_portal.png)
+![Care Portal](../images/Screenshot_care_portal.png)
 
 This replicates the functions you will find on your Nightscout screen under the "+" symbol which allows you to add notes to your records. Functions such as recording when you change a pump site, or insulin cartridge should be self explanatory. BUT this section does not issue any commands to your pump. So if you add a bolus using this screen it simply makes a note of this on your Nightscout record, the pump won't be instructed to deliver a bolus. 
 
@@ -89,7 +89,7 @@ You don't normally need to worry about these, they show the results of the OpenA
 
 ## Profile
 
-![Profile](../../images/Screenshot_profile.png)
+![Profile](../images/Screenshot_profile.png)
 
 AndroidAPS can run using a number of different profile configurations. Typically - as shown here - the Nightscout profile has been downloaded via the built in Nighscout client and is displayed here in read-only form. If you wanted to make any changes you would do this from your Nightscout user interface and then do a "Switch Profile" on your AndroidAPS rig to refresh the download. Data such as the basal profile would then be automatically copied over to your pump.
 
@@ -109,7 +109,7 @@ These are simply logs of treatments (boluses and carbs), xDrip messages and mess
 
 ## Config Builder
 
-![Config Builder](../../images/Screenshot_config_builder.png)
+![Config Builder](../images/Screenshot_config_builder.png)
 
 This is where you will set up the configuraton of your AndroidAPS rig. This screenshot shows a pretty typical rig using a Combo pump, a Dexcom G5 CGM sensor being managed via xDrip+ and running with NovoRapid insulin on an Oref profile and connected to a Nightscout cloud based server.
 
