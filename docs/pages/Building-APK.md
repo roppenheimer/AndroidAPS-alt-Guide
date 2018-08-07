@@ -30,12 +30,18 @@ You then enter the URL of the repository you want to download. In this case Andr
 * Select 'app' as Module
 ![Select 'app' as Module](https://user-images.githubusercontent.com/9692866/38299495-8885e446-37fa-11e8-9d19-cb05fd1bb506.png)
 
-* Set a keystore and password, if this is your first time then Create new, or fill in the details of your existing one.  For more information about using the keystore see [https://developer.android.com/studio/publish/app-signing.html#generate-key](https://developer.android.com/studio/publish/app-signing.html#generate-key)
+* If this is your first time creating a signed .apk you will need to create a digital signature file, known as a keystore. If you already have a keysotre then you can use that. For more information about using the keystore see [https://developer.android.com/studio/publish/app-signing.html#generate-key](https://developer.android.com/studio/publish/app-signing.html#generate-key)
 
 ![](../images/generate_signed_APK.png)
 
-* 'Release' should be your default choice for "Build Type", 'Debug' is just for people coding.
-* Select the build type you want to build. 
+Once you have created your keystore make sure you save it in a place where you can find it easily - you will need it again.
+
+Having done that, click "Next" and you will get the following dialogue:
+
+![release full signatuer](https://user-images.githubusercontent.com/9692866/38299493-8838e38a-37fa-11e8-8c28-3fa6071e7a76.png)
+
+* Select the build type and flavor as shown in the screenshot.  = 'Release' should be your default choice. ('Debug' is just for people doing coding.)
+* Select the flavor you want to build. You need "full"
     * full (i.e. recommendations automatically enacted in closed looping)
     * openloop (i.e. recommendations given to user to manually enact)
     * pumpcontrol (i.e. remote control for pump, no looping)
@@ -43,7 +49,7 @@ You then enter the URL of the repository you want to download. In this case Andr
 
 *   Select V1 "Jar Signature" (V2 is optional) and click Finish. 
 
-![release full signatuer](https://user-images.githubusercontent.com/9692866/38299493-8838e38a-37fa-11e8-8c28-3fa6071e7a76.png)
+
 
 * Please wait for some time until the APK is created. You will get the pop-up below when the process is done.
 
