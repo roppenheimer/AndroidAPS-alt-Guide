@@ -34,11 +34,11 @@ Before  you start you should read your way through the information on this site 
    :maxdepth: 3
    :glob:
    
-   Before-you-start/index
-   Understanding_AndroidAPS/index
-   Designing_Your_Rig/index
-   Nightscout/index
+   Before-you-start
+   Understanding_AndroidAPS
+   Designing_Your_Rig
+   Nightscout
    AndroidAPSsoftware
-   Configuration/index
-   Troubleshooting/index
-   Where-To-Go-For-Help/index
+   Configuration
+   Troubleshooting
+   Where-To-Go-For-Help
