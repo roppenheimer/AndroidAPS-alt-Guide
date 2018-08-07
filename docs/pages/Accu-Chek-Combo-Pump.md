@@ -55,7 +55,7 @@ Please be aware that this is not complete list and reflects personal user experi
 ## Setup
 
 - Configure the pump using 360 config software. If you do not have the software, please contact your Accu-Chek hotline. They usually send registered users a CD with the "360° Pump Configuration Software" and a SmartPix USB-infrared connection device (the Realtyme device also works if you have that).
-  - Required (marked green in screenshots):
+  - **Required changes** (marked green in screenshots):
     - Set/leave the menu configuration as "Standard", this will show only the supported
       menus/actions on the pump and hide those which are unsupported (extended/multiwave bolus,
       multiple basal rates), which cause the loop functionality to be restricted when used because
@@ -65,16 +65,14 @@ Please be aware that this is not complete list and reflects personal user experi
     - Disable _Signal End of Temporary Basal Rate_
     - Set TBR _Duration increment_ to 15 min
     - Enable Bluetooth
-  - Recommended (marked blue in screenshots)
+  - **Recommended changes** (marked blue in screenshots)
     - Set low cartridge alarm to your liking
-    - Configure a max bolus suited for your therapy to protect against bugs in the software
-    - Similarly, configure maximum TBR duration as a safeguard. Allow at least 3 hours, since
-      the option to disconnect the pump for 3 hours sets a 0% for 3 hours.
-    - YOu may want to enable the key lock on the pump to prevent bolusing from the pump, esp. when the
-      pump was used before and quick bolusing was a habit. But be aware that if you do this and you become separated from the phone you use to run AndroidAPS then you won't be able to operate the pump manually.
+    - Configure a max bolus to suited yourself to protect against bugs in the software delivering over-large boluses
+    - Similarly, configure maximum TBR duration as a safeguard. This needs to be at least 3 hours, because
+      the pump disconnect option in AndroidAPS may need to set a 0% TBR for up to 3 hours.
+    - You may want to enable the key lock on the pump to prevent bolusing from the pump. But be aware that if you do this and you become separated from the phone you use to run AndroidAPS then you won't be able to operate the pump manually. If you do bolus from the pump then AndroidAPS will not be aware of this fact until it next reads the pump history and this may be a while. 
     - Set display timeout and menu timeout to the minimum of 5.5 and 5 respectively. This allows AndroidAPS to
-      recover more quickly from error situations and reduces the amount of vibrations that can occur during
-      such errors
+      recover more quickly from error situations and reduces the amount of vibration alarms that may occur.
 
 ![Screenshot of user menu settings](../images/combo/combo-menu-settings.png)
 
