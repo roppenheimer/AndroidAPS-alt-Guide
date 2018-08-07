@@ -1,4 +1,4 @@
-The AndroidAPS alt-guide
+The AndroidAPS alt-Guide
 ==============================================
 
 *An unofficial guide to AndroidAPS: the Artificial Panchreas system for Android*
@@ -7,13 +7,13 @@ If you're reading this you are almost certainly familiar with insulin pumps and 
 
 Well, they can. AndroidAPS provides a way of taking the data from a Bluetooth enabled CGM, doing the necessary processing and then controlling a Bluetooth enabled insulin pump to emulate what a panchreas would do. It's not a plug an play solution, it can never do as well as a natural pancreas would but with careful setting up and usage it can deliver results that are not far behind.
 
-A natural panchreas can react very quickly to changes in blood glucose, and it can put insulin directly into the blood stream that will take effect in minutes. By comparison a CGM will typically be about 10-15 minutes behind, insulin infused into the subcutaneous tissue will take around an hour to reach fill effect and the infused insulin will take a long time to die away compared to that from a natural panchreas.
+A natural panchreas can react very quickly to changes in blood glucose, and the insulin that it puts directly into the blood stream takes effect in minutes. By comparison CGM readings are typically be about 10-15 minutes behind, insulin infused into the subcutaneous tissue takes around an hour to reach full effect and the infused insulin takes a long time to die away compared to that from a natural panchreas.
 
-Therefore an artificial panchreas system is to a large extent dependent on being able to make predictions of what your blood glucose is likely to do in the next few hours. It does this using much the same type of calculations as you would normally when working out yout dosages, but crucially, it updates these forecasts every five minutes when it gets a fresh reading from your CGM. You will need to tell it about carbs you are about to eat, about if you are about to exercise and so on. You will also need to configure it carefully with your basal profile, your various ratios and test them carefully. If you make the effort to understand all these things you can reasonably expect to see blood sugar results which approach those that a non-diabetic person would see.
+Therefore an artificial panchreas system is to a large extent dependent on being able to make predictions of what your blood glucose is likely to do in the next few hours. It does this using much the same type of calculations as you would normally when working out your dosages, but crucially, it updates these forecasts every five minutes when it gets a fresh reading from your CGM. You still need to tell it about carbs you are about to eat, about if you are about to exercise and so on. You also need to configure it carefully with your basal profile, your various ratios and test them carefully. If you make the effort to understand all these things you can reasonably expect to see blood sugar results which approach those that a non-diabetic person would see.
 
 **About AndroidAPS**
 
-AndroidAPS is an app that runs a version of `OpenAPS "oref0" algorithm <https://openaps.readthedocs.io/en/latest/>`_ and can communicate with bluetooth-enabled insulin pumps and CGMs. OpenAPS is an algorithm that has been developed independently of any pump or CGM manufacturer and whose underlying premise is that any manufacturer's CGM and any manufacturer's pump, given a suitable interface, could be used to build an artificial panchreas. You can read more about how the OpenAPS model works at the `OpenAPS Reference Design <https://openaps.org/reference-design/>`_
+AndroidAPS is an app that runs a version of `OpenAPS "oref0" and "oref1" algorithm <https://openaps.readthedocs.io/en/latest/>`_ and can communicate with bluetooth-enabled insulin pumps and CGMs. OpenAPS is an algorithm that has been developed independently of any pump or CGM manufacturer and whose underlying premise is that any manufacturer's CGM and any manufacturer's pump, given a suitable interface, could be used to build an artificial panchreas. You can read more about how the OpenAPS model works at the `OpenAPS Reference Design <https://openaps.org/reference-design/>`_
 
 
 Before  you start you should read your way through the information on this site and link up with some of the social media groups where you will be able to discuss with other people using AndroidAPS and ask for help if you need it.
@@ -38,7 +38,7 @@ Before  you start you should read your way through the information on this site 
    Understanding_AndroidAPS/index
    Designing_Your_Rig/index
    Nightscout/index
-   AndroidAPSsoftware/index
+   AndroidAPSsoftware/AndroidAPSsoftware
    Configuration/index
    Troubleshooting/index
    Where-To-Go-For-Help/index
