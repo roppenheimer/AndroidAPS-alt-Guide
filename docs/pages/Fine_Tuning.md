@@ -37,7 +37,7 @@ Believe me when I say that Anna is not enthusiastic about fasting basal testing�
 
 For example, here’s some of a recent open-loop basal testing we did with Anna…confirmed that the BGs could stay pretty steady without the involvement of temp basal help from looping.  The 8g of eggs at the end of almost 3 hours…looks like she went a little lower (and may have deceased even more if she hadn’t started the next meal) than she had started.  Since basals appeared to be keeping her pretty steady, I made a mental note that carb ratio might be just a touch too strong, but didn’t adjust right away.  I waited to see how the next meal was going to behave.
 
-![Basal Open Loop](../../images/basal-open-loop.png)
+![Basal Open Loop](../images/basal-open-loop.png)
 
 If you absolutely don’t want to turn off your closed loop to test this…see if you can find a time where BGs are steady, you are at/close to target, and you are not carrying positive or negative IOB.  If you can’t find a time like that, chances are you may need to adjust settings.  Nighttime is usually the easiest to find that…but having well-set nighttime basals does not mean that daytime is also necessarily well-set.  That needs to be tested as well.
 
@@ -49,9 +49,9 @@ In the context of a closed loop ISF  affects how strongly the loop responds to d
 
 If your ISF number is too low (the insulin is having a bigger effect than the number would suggest), one of the most common symptoms you’ll see is a roller coaster of BGs where the temp basals are cycling between zero and high temping.  I’m going to borrow a couple of example graphs from Looped group.  These are examples where too low an ISF (ISF number too small) is more than likely a large factor in the roller-coaster (doesn’t mean it is the only culprit, and is more difficult to ferret out when food is involved like the second graph).  But, lightning bolt high temp basals followed by very quick BG drops and zero temps is usually too low an ISF… raise the ISF number to help looping know that each unit of insulin is actually doing more BG dropping.
 
-![](../../images/19248027_10155510691426450_4212861104795372164_n.jpg)
-![](../../images/15591479_10154031400407115_2525671186696153617_o.jpg)
-![](../../images/Screen-Shot-2017-10-28-at-12.20.02-PM.png)
+![](../images/19248027_10155510691426450_4212861104795372164_n.jpg)
+![](../images/15591479_10154031400407115_2525671186696153617_o.jpg)
+![](../images/Screen-Shot-2017-10-28-at-12.20.02-PM.png)
 
 ## 4th: Carb Ratios
 
@@ -63,11 +63,11 @@ A bad carb ratio will leave you higher or lower than the starting point of the m
 
 For example, these are two examples of carb ratios being too strong.  In this first example, there’s 2.27 units of IOB and BGs are at 103 and headed down at a pretty good clip at about 2 hours after the meal.  If the next meal hadn’t been eaten then, low treatment certainly would’ve been needed.
 
-![](../../images/carbratio1.jpg)
+![](../images/carbratio1.jpg)
 
 This next graph also shows too aggressive of a carb ratio.  Three hours after the meal, there’s nearly 0.50 units IOB, BG is well below where the meal started, and definitely low treatments needed.
 
-![](../../images/carbratio2.png)
+![](../images/carbratio2.png)
 
 If you are finding that a correct carb ratio is yielding good BGs 3 hours later, but you aren’t happy with the peak BGs during the meal…then it may be time to explore increasing or adding prebolusing time to your meal or implementing “eating soon” targets an hour before meals to help control the post-meal BG spike.  Artificially strengthening carb ratios to help control post-meal BG spike will likely yield lows 2-3 hours after a meal.
 
@@ -79,21 +79,21 @@ For us personally, hormones play the largest variable in settings.  If we estima
 
 One of the easiest tells we have that basals need to change is hanging out above/below target with positive/negative IOB.  Here’s one recent example.  During the day before this screenshot, Anna was busy with some stressful things at school…like being front and center during the school’s pep rally for Homecoming around noon to 2pm.  So, the unusual red spot on her graph didn’t immediately make me think anything was “wrong”.  Then she went to Homecoming dance that night, hung a little higher than target, but nothing too bad and she wasn’t looping during dance (her choice).  She came home around midnight, and at about 5am I noticed that she was hanging out steady at about 130s and carrying positive IOB.  Fingerstick showed she was at 195 (thanks Dexcom).  Gave a correction and started to wonder if may her basals were too low, because she shouldn’t have been that high under normal operations (but maybe homecoming dance was to blame?).  I didn’t make any changes to her settings at this point, but did start to watch for signs.
 
-![](../../images/first.png)
+![](../images/first.png)
 
 In the morning, Anna had a typical breakfast with some toast and fruit.  With fiasp, she hasn’t really been going above 150 (and usually not above 130)…so when she hit nearly 180 for the meal, I definitely started to think basals may indeed be low…but I waited to see how the meal would land.
 
-![](../../images/second.png)
+![](../images/second.png)
 
 As you can see above, about 2.5 hours after her meal of fairly quick carbs, she started to rise.  And she started to rise with about 0.75 units IOB.  This is odd for her.  Ideally, we wouldn’t be seeing sharp, steady rises with a good amount of IOB.  Additionally, this meal didn’t have protein or fat involved so I knew the rise wasn’t a late food contribution (even if Loop had some cob still on board).
 
 So, once it looked like (1) the rise really wasn’t slowing down even like Loop thought it should, (2) she was climing with fiasp for nearly an hour of high temping with (3) positive IOB…then I finally decided to adjust basals.  I moved her basals from 0.85 to 1.2 u/hr.  Why that number?  A guess based on basal rates she tends to move between during her regular variations.  Trial and error have shown us that a rate slightly above 1 u/hour is usually needed sometimes.
 
-![](../../images/third.png)
+![](../images/third.png)
 
 One of the things I like to watch is the IOB pill when we make a basal change.  Ideally, I like to get the IOB back to a number that is roughly how much I think may help get a correction going again.  So, changing the basals from 0.85 to 1.2, Loop recalculated IOB from 0.52 to -0.48.  Which was roughly in line with what I’d expect…Anna was about 27 mg/dl over her 95 mg/dl target with an ISF of 55…meaning she’d need about 0.49 units to correct to target.  Perfect…seemed like a reasonable amount of movement for basals then.  Loop started running a high temp and I wait to see how things look in about 2 hours.
 
-![](../../images/fourth.png)
+![](../images/fourth.png)
 
 About 1.5 hours later, Anna wasn’t quite coming down as fast as I would’ve expected. She was still holding 0.57 IOB and at same BG as she was 80 minutes before.  So…I waited a bit and adjusted again to 1.4 u/hour.  Again, just a guess, but nearly two hours after that adjustment we are sitting just about at target and just about even IOB.  I’ll probably split the baby and use 1.3 u/hr going forward.
 
