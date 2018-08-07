@@ -33,7 +33,7 @@ You then enter the URL of the repository you want to download. In this case Andr
 
 ![Select 'app' as Module](https://user-images.githubusercontent.com/9692866/38299495-8885e446-37fa-11e8-9d19-cb05fd1bb506.png)
 
-* If this is your first time creating a signed .apk you will need to create a digital signature file, known as a keystore. If you already have a keysotre then you can use that. For more information about using the keystore see [https://developer.android.com/studio/publish/app-signing.html#generate-key](https://developer.android.com/studio/publish/app-signing.html#generate-key)
+* If this is your first time creating a signed .apk you will need to create a digital signature file, known as a keystore. If you already have a keystore then you can use that. For more information about using the keystore see [https://developer.android.com/studio/publish/app-signing.html#generate-key](https://developer.android.com/studio/publish/app-signing.html#generate-key)
 
 ![](../images/generate_signed_APK.png)
 
