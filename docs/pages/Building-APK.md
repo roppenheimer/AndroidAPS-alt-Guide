@@ -29,7 +29,8 @@ You then enter the URL of the repository you want to download. In this case Andr
  
 * Go to Build Menu and click on Generate Signed APK
 
-* Select 'app' as Module
+* Then under Module select "app":
+
 ![Select 'app' as Module](https://user-images.githubusercontent.com/9692866/38299495-8885e446-37fa-11e8-9d19-cb05fd1bb506.png)
 
 * If this is your first time creating a signed .apk you will need to create a digital signature file, known as a keystore. If you already have a keysotre then you can use that. For more information about using the keystore see [https://developer.android.com/studio/publish/app-signing.html#generate-key](https://developer.android.com/studio/publish/app-signing.html#generate-key)
