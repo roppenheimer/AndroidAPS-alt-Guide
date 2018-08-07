@@ -16,5 +16,12 @@ For a typical rig you will need the following:
 
 ## On your PC
 
+* **Android Studio** you will need this to compile the source code for AndroidAPS and Ruffy into .apk files that you can install on your phone. You can get it from here: [https://developer.android.com/studio/](https://developer.android.com/studio/)
 
+* **GitHub Desktop** not essential but useful. It enables you to maintain a local copy of the AndroidAPS and Ruffy source codes on your PC and keep track of any changes. You can get it from here: [https://desktop.github.com/](https://desktop.github.com/)
 
+## In the Cloud
+
+* **Nightscout** this provides a comprehensive way of gathering your diabetes management data together in one place, managing your profiles, generating reports and so on. It's not essential but it is hugely advantageous. You can find out more here: [http://www.nightscout.info/](http://www.nightscout.info/). You can either build your own Nightscout instance following the instructions on the website of you can use a hosted service like that at [https://www.ns.10be.de](https://www.ns.10be.de). There are also Nightscout apps available from the AppStore and Google Play which can be used to follow blood glucose and the rest. Useful for parents monitoring their children.
+
+* **Autotune** as you get into using your rig you will need to tune your profile in terms of carb ratios, sensitivity and basal rates. You can do this by hand of course but Autotune is a very effective tool for crunching the numbers and making recommendations. You can either do your own implementation using the information at [https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autotune.html](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autotune.html) or you can use a hosted service like that at [https://autotuneweb.azurewebsites.net/](https://autotuneweb.azurewebsites.net/)
