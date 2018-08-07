@@ -13,17 +13,17 @@ Having done that you will need to access the pump's configuration settings and m
   Software to configure the pump.
   Roche sends out Smartpix devices and the configuration software
   free of charge to their customers upon request.
-- A compatible phone: An Android phone with a phone running LineageOS 14.1 (formerly CyanogenMod) or Android 8.1 (Oreo). The LineageOS 14.1 has to be a recent version from at least June 2017 since the change needed to pair the Combo pump was only introduced at that time. A list of phones can be found in the [AAPS Phones](https://docs.google.com/spreadsheets/d/1gZAsN6f0gv6tkgy9EBsYl0BQNhna0RDqA9QGycAqCQc/edit#gid=698881435) document.
+- A compatible phone: An Android phone with a phone running LineageOS 14.1 (formerly CyanogenMod) or Android 8.1 (Oreo). The LineageOS 14.1 has to be a recent version from at least June 2017 since the change needed to pair the Combo pump was only introduced at that time. A list of phones can be found in the [AndroidAPS Phones](https://docs.google.com/spreadsheets/d/1gZAsN6f0gv6tkgy9EBsYl0BQNhna0RDqA9QGycAqCQc/edit#gid=698881435) document.
 Please be aware that this is not complete list and reflects personal user experience. You are encouraged to also enter your experience and thereby help others (these projects are all about paying it forward).
 
-- Be aware that while Android 8.1 allows communicating with the Combo, there are still issues with AAPS on 8.1.
+- Be aware that while Android 8.1 allows communicating with the Combo, there are still issues with AndroidAPS on 8.1.
   For advanced users, it is possible to perform the pairing on a rooted phone and transfer it to another rooted
-  phone to use with ruffy/AAPS, which must also be rooted. This allows using phones with Android < 8.1 but
+  phone to use with ruffy/AndroidAPS, which must also be rooted. This allows using phones with Android < 8.1 but
   has not been widely tested: https://github.com/gregorybel/combo-pairing/blob/master/README.md
 
 ## Limitations
 
-- Extended bolus and multiwave bolus are not supported (see [Extended Carbs](https://androidaps.readthedocs.io/en/latest/Usage/Extended-Carbs.html) instead)
+- Extended bolus and multiwave bolus are not supported (see [Extended Carbs](https://androidaps.readthedocs.io/en/latest/pages/Extended-Carbs.html) instead)
 - Only one basal profile is supported.
 - Setting a basal profile other than 1 on the pump, or delivering extended boluses or multiwave
   boluses from the pump interferes with TBRs and forces the loop into low-suspend only mode for 6 hours
@@ -37,9 +37,9 @@ Please be aware that this is not complete list and reflects personal user experi
 - If the loop requests a running TBR to be cancelled the Combo will set a TBR of 90% or 110%
   for 15 minutes instead. This is because cancelling a TBR causes an alert on the pump which
   causes a lot of vibrations.
-- Occasionally (every couple of days or so) AAPS might fail to automatically cancel
-  a TBR CANCELLED alert, which the user then needs to deal with (by pressing the refresh button in AAPS
-  to transfer the warning to AAPS or confirming the alert on the pump).
+- Occasionally (every couple of days or so) AndroidAPS might fail to automatically cancel
+  a TBR CANCELLED alert, which the user then needs to deal with (by pressing the refresh button in AndroidAPS
+  to transfer the warning to AndroidAPS or confirming the alert on the pump).
 - Bluetooth connection stability varies with different phones, causing "pump unrechable" alerts, 
   where no connection to the pump is established anymore. If that error occurs, make sure Bluetooth 
   is enabled, press the Refresh button in the Combo tab to see if this was caused by an intermitted 
@@ -49,7 +49,7 @@ Please be aware that this is not complete list and reflects personal user experi
   little that can be done to remedy either of those issues at this point. So if you see those errors 
   frequently your only option at this time is to get another phone that's known to work well with 
   AndroidAPS and the Combo (see above).
-- Issuing a bolus from the pump will be not always be detected in time (checked for whenever AAPS connects to the pump), and might take up to 20 minutes in the worst case. Boluses on the pump are always checked before a high TBR or a bolus issued by AAPS but due to the limitations AAPS will then refuse to issue the TBR/Bolus as it was calculated under false premises. (-> Don't bolus from the Pump! See chapter *Usage*)
+- Issuing a bolus from the pump will be not always be detected in time (checked for whenever AndroidAPS connects to the pump), and might take up to 20 minutes in the worst case. Boluses on the pump are always checked before a high TBR or a bolus issued by AndroidAPS but due to the limitations AndroidAPS will then refuse to issue the TBR/Bolus as it was calculated under false premises. (-> Don't bolus from the Pump! See chapter *Usage*)
 - Setting a TBR on the pump is to be avoided since the loop assumes control of TBRs. Detecting a new TBR on the pump might take up to 20 minutes and the TBR's effect will only be accounted from the moment it is detected, so in the worst case there might be 20 minutes of a TBR that is not reflected in IOB. 
 
 ## Setup
@@ -98,11 +98,11 @@ Please be aware that this is not complete list and reflects personal user experi
   initiating the pairing process (this keeps the phone's Bluetooth discoverable as long as the menu is displayed)
   and switch back to Ruffy after confirming the pairing on the pump, when the pump displays the authorization code.
   If you're unsuccessful in pairing the pump (say after 10 attempts), try waiting up to 10s before confirming the pairing on the pump (when the name of the phone is displayed on the pump). If you have configured the menu timeout to be 5s above, you need to increase it again. Some users reported they needed to do this.
-- When AAPS is using ruffy, the Ruffy app can't be used. The easiest way is to just
-  reboot the phone after the pairing process and let AAPS start Ruffy in the background.
+- When AndroidAPS is using ruffy, the Ruffy app can't be used. The easiest way is to just
+  reboot the phone after the pairing process and let AndroidAPS start Ruffy in the background.
 - If the pump is completely new, you will need to do one bolus on the pump, so the pump creates a first history entry.
-- Before enabling the Combo plugin in AAPS make sure your profile is set up
-  correctly and activated(!) and your basal profile is up to date as AAPS will sync the basal profile
+- Before enabling the Combo plugin in AndroidAPS make sure your profile is set up
+  correctly and activated(!) and your basal profile is up to date as AndroidAPS will sync the basal profile
   to the pump. Then activate the Combo plugin. Press the _Refresh_ button on the Combo tab to initialize the 
   pump.
 - To verify your setup, with the pump **disconnected**, use AndroidAPS to set a TBR of 500% for 15 min and issue a bolus. The pump should now have a TBR running and the bolus in the history. AndroidAPS should also show the active TBR and delivered bolus.
@@ -134,32 +134,32 @@ Please be aware that this is not complete list and reflects personal user experi
 - It's recommended to enable key lock on the pump to prevent bolusing from the pump, esp. when the
   pump was used before and using the "quick bolus" feature was a habit.
   Also, with keylock enabled, accidentally pressing a key will NOT interrupt active communication
-  between AAPS and pump.
+  between AndroidAPS and pump.
 - When a BOLUS/TBR CANCELLED alert starts on the pump during bolusing or setting a TBR, this is
-  caused by a disconnect between pump and phone, which happens from time to time. AAPS will try to reconnect and confirm the alert
+  caused by a disconnect between pump and phone, which happens from time to time. AndroidAPS will try to reconnect and confirm the alert
   and then retry the last action (boluses are NOT retried for safety reasons). Therefore,
-  such an alarm can be ignored as AAPS will confirm it automatically, usually within 30s (cancelling it is not problem, but will lead to the currently
+  such an alarm can be ignored as AndroidAPS will confirm it automatically, usually within 30s (cancelling it is not problem, but will lead to the currently
   active action to have to wait till the pump's display turns off before it can reconnect to the
   pump). If the pump's alarm continues, automatic corfirmation failed, in which case the user
   needs to confirm the alarm manually.
 - When a low cartridge or low battery alarm is raised during a bolus, they are confirmed and shown
-  as a notification in AAPS. If they occur while no connection is open to the pump, going to the
+  as a notification in AndroidAPS. If they occur while no connection is open to the pump, going to the
   Combo tab and hitting the Refresh button will take over those alerts by confirming them and
-  show a notification in AAPS.
-- When AAPS fails to confirm a TBR CANCELLED alert, or one is raised for a different reason,
+  show a notification in AndroidAPS.
+- When AndroidAPS fails to confirm a TBR CANCELLED alert, or one is raised for a different reason,
   hitting Refresh in the Combo tab establishes a connection, confirms the alert and shows
-  a notification for it in AAPS. This can safely be done, since those alerts are benign - an
+  a notification for it in AndroidAPS. This can safely be done, since those alerts are benign - an
   appropriate TBR will be set again during the next loop iteration.
 - For all other alerts raised by the pump: connecting to the pump will show the alert message in
   the Combo tab, e.g. "State: E4: Occlusion" as well as showing a notification on the main screen.
-  An error will raise an urgent notification. AAPS never confirms serious errors on the pump,
+  An error will raise an urgent notification. AndroidAPS never confirms serious errors on the pump,
   but let's the pump vibrate and ring to make sure the user is informed of a critical situation
   that needs action.
-- After pairing, ruffy should not be used directly (AAPS will start in the background as needed),
-  since using ruffy at AAPS at the same time is not supported.
-- If AAPS crashes (or is stopped from the debugger) while AAPS and the pump were communicating (using
-  ruffy), it might be necessary to force close ruffy. Restarting AAPS will start ruffy again.
+- After pairing, ruffy should not be used directly (AndroidAPS will start in the background as needed),
+  since using ruffy at AndroidAPS at the same time is not supported.
+- If AndroidAPS crashes (or is stopped from the debugger) while AndroidAPS and the pump were communicating (using
+  ruffy), it might be necessary to force close ruffy. Restarting AndroidAPS will start ruffy again.
   Restarting the phone is also an easy way to resolve this if you don't know how to force kill
   an app.
-- Don't press any buttons on the pump while AAPS communicates with the pump (Bluetooth logo is
+- Don't press any buttons on the pump while AndroidAPS communicates with the pump (Bluetooth logo is
   shown on the pump).
