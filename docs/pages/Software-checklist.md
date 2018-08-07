@@ -14,5 +14,7 @@ For a typical rig you will need the following:
 * **LineageOS** this is a modified version of Android which you need if you are using a Combo pump in order to get the bluetooth to pair. (If you have a phone with Android 8 (Oreo) or newer you shouldn't need this.) There are LineageOS downloads for different phones and you can get them from here: https://download.lineageos.org/. LineageOS is quite a well known modification for Android phones so if you don't want to tackle this yourself you'll probably find an independent phone repairer happy to do it for you.
 
 
+## On your PC
+
 
 
