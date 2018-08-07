@@ -1,4 +1,4 @@
-# Installing your software 
+# Software Checklist 
 
 To build your rig there are a number of pieces of software that you will need, both to install on your phone, as online resources and on your PC.
 
