@@ -23,6 +23,8 @@ You then enter the URL of the repository you want to download. In this case Andr
 
 * In Android Studio click on "File" and select 'Open an existing Android Studio project'. selecting the location of the extracted files.
 
+![](../images/androidstudio4.png)
+
 * You might get an error message about not finding build tools - click on the links Android Studio provides to download all the suggested software updates.
  
 * Go to Build Menu and click on Generate Signed APK
