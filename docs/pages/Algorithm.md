@@ -12,7 +12,7 @@ AndroidAPS’s algorithm for adjusting insulin delivery is oriented around makin
 ## Terminology
 This graph and legend illustrates terms commonly used in discussing the algorithm, and shows them in the context of historical and forecast BG in a style similar to the overview screen of AndroidAPS.
 
-![Terms](../../images/terms_graph.png)
+![Terms](../images/terms_graph.png)
 
 Fig. 1 Chart illustrating terms
 
@@ -43,7 +43,7 @@ If blood glucose is predicted to stray outside of the desired target range, Loop
 
 ### Eventual BG Above Correction Range
 
-![Eventual BG Above Range](../../images/eventual_bg_above_range.png)
+![Eventual BG Above Range](../images/eventual_bg_above_range.png)
 
 Fig 2. Eventual BG Above Range
 
@@ -51,7 +51,7 @@ When eventual BG is predicted to go above the current correction range, Loop wil
 
 ### Eventual BG Below Correction Range
 
-![Eventual BG Below Range](../../images/eventual_bg_below_range.png)
+![Eventual BG Below Range](../images/eventual_bg_below_range.png)
 
 Fig 3. Eventual BG Below Range
 
@@ -59,7 +59,7 @@ When eventual BG is predicted to go below the current correction range, Loop wil
 
 ### Temporary Excursion Below Range
 
-![Temporary Excursion Below Range](../../images/temporary_excursion_below_range.png)
+![Temporary Excursion Below Range](../images/temporary_excursion_below_range.png)
 
 Fig 4. Temporary Excursion Below Range
 
@@ -67,7 +67,7 @@ If the prediction has a temporary excursion below range, but Eventual BG is in r
 
 ### Minimum BG Below Suspend Threshold
 
-![Min BG Below Guard](../../images/min_bg_below_guard.png)
+![Min BG Below Guard](../images/min_bg_below_guard.png)
 
 Fig 5. Min BG Below Guard
 
@@ -81,7 +81,7 @@ The forecast used for bolusing is slightly different than the forecast used for 
 
 ### Eventual BG Above Correction Range
 
-Fig 6. ![Eventual BG Above Correction Range](../../images/bolus_eventual_above_range.png)
+Fig 6. ![Eventual BG Above Correction Range](../images/bolus_eventual_above_range.png)
 
 Fig 2. Eventual BG Above Range
 
