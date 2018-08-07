@@ -38,10 +38,12 @@ Once you have created your keystore make sure you save it in a place where you c
 
 Having done that, click "Next" and you will get the following dialogue:
 
-![release full signatuer](https://user-images.githubusercontent.com/9692866/38299493-8838e38a-37fa-11e8-8c28-3fa6071e7a76.png)
+![release full signature](https://user-images.githubusercontent.com/9692866/38299493-8838e38a-37fa-11e8-8c28-3fa6071e7a76.png)
 
-* Select the build type and flavor as shown in the screenshot.  = 'Release' should be your default choice. ('Debug' is just for people doing coding.)
-* Select the flavor you want to build. You need "full"
+* Select the build type and flavor as shown in the screenshot.  Build Type = 'Release' should be your default choice. ('Debug' is just for people doing coding.)
+* Select the flavor you want to build. You need "full".
+
+
     * full (i.e. recommendations automatically enacted in closed looping)
     * openloop (i.e. recommendations given to user to manually enact)
     * pumpcontrol (i.e. remote control for pump, no looping)
