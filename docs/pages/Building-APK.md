@@ -49,9 +49,7 @@ Having done that, click "Next" and you will get the following dialogue:
 
 *   Select V1 "Jar Signature" (V2 is optional) and click Finish. 
 
-
-
-* Please wait for some time until the APK is created. You will get the pop-up below when the process is done.
+* The APK will now take some time to generate. You will get the pop-up below when the process is done.
 
 ![](../images/androidstudio3.png)
 
