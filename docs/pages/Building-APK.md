@@ -20,6 +20,7 @@ You then enter the URL of the repository you want to download. In this case Andr
 
 ![](../images/Screenshot_git_clone_2.png)
 
+From here on the process is the same no matter which method you chose for downloading the repository.
 
 * In Android Studio click on "File" and select 'Open an existing Android Studio project' and select the location of the extracted files. You will also need to select which branch of the repository you want to compile. Normally this will be "Master".
 
