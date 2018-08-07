@@ -4,7 +4,7 @@ AndroidAPS and Ruffy come in the form of a source code that you have to download
 
 You will need to download a local copy of the source code folders (called a repository) onto your PC. There are a number of ways you can do this:
 
-* **Install GitHub desktop** (recommended) on your PC. This will downlaod the repository for you and automatically download any updates that occur in the future. 
+* **Install GitHub desktop** (recommended) on your PC. This will download the repository for you and automatically download any updates that occur in the future. 
 
 * **Use the "clone" function in Android Studio** to download a copy of the repository directly into Android Studio. This works well but you will need to repeat the process each time there are future updates.
 
@@ -16,14 +16,14 @@ We will look first at using the clone function in Android Studio, as per the fol
 
 ![](../images/Screenshot_git_clone.png)
 
-You then enter the URL of the repository you want to download. In this case AndroidAPS, but if yo uare using a Combo you will need to do the same process for Ruffy as well.
+You then enter the URL of the repository you want to download. In this case AndroidAPS, but if you are using a Combo you will need to do the same process for Ruffy as well.
 
 ![](../images/Screenshot_git_clone_2.png)
 
 
-* Run Android Studio and select 'Open an existing Android Studio project', selecting the location of the extracted files.
+* In Android Studio click on "File" and select 'Open an existing Android Studio project'. selecting the location of the extracted files.
 
-* You might get an error message about not finding build tools - click on the links Android Studio provides to download all the software updates suggested.
+* You might get an error message about not finding build tools - click on the links Android Studio provides to download all the suggested software updates.
  
 * Go to Build Menu and click on Generate Signed APK
 
