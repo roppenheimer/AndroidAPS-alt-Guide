@@ -1,41 +1,18 @@
-# Installing AndroidAPS - Build the APK
+# Installing your software 
 
-* Install [Android Studio](https://developer.android.com/studio/install.html).  
-* Use git clone in Android Studio as shown in screenshot below.
+To build your rig there are a number of pieces of software that you will need, both to install on your phone, as online resources and on your PC.
 
-![](../images/Screenshot_git_clone.png)
+## On your phone.
+For a typical rig you will need the following:
 
-![](../images/Screenshot_git_clone_2.png)
+* **xDrip+** to collect the blood glucose data from your sensor and share it with Android APS. For most people this is the collector of choice although there are others you can choose from. You can download it from here: https://jamorham.github.io/#xdrip-plus
+
+* **AndroidAPS** the app itself which takes your blood glucose readings, your inputs in terms of carbs, boluses and your settings and which then controls your pump. It comes as a source code that you have to compile yourself (more about that later) and you can download it from here: https://github.com/MilosKozak/AndroidAPS
+
+* **Ruffy** if you are using a Combo pump this piece of software essentially mimics the Combo bluetooth handset and sends commands to the pump. It also allows you to bluetooth pair the pump with your phone. Once installed it acts as a driver for AndroidAPS to control the pump. Once again, it comes as a source code that you have to compile yourself. You can get it from here: https://github.com/MilosKozak/ruffy (Be careful that you choose this version as there are other versons around that won't do what you want.)
+
+* **LineageOS** this is a modified version of Android which you need if you are using a Combo pump in order to get the bluetooth to pair. (If you have a phone with Android 8 (Oreo) or newer you shouldn't need this.) There are LineageOS downloads for different phones and you can get them from here: https://download.lineageos.org/. LineageOS is quite a well known modification for Android phones so if you don't want to tackle this yourself you'll probably find an independent phone repairer happy to do it for you.
 
 
-* Run Android Studio and select 'Open an existing Android Studio project', selecting the location of the extracted files.
 
-* You might get an error message about not finding build tools - click on the links Android Studio provides to download all the software updates suggested.
- 
-* Go to Build Menu and click on Generate Signed APK
 
-* Select 'app' as Module
-![Select 'app' as Module](https://user-images.githubusercontent.com/9692866/38299495-8885e446-37fa-11e8-9d19-cb05fd1bb506.png)
-
-* Set a keystore and password, if this is your first time then Create new, or fill in the details of your existing one.  For more information about using the keystore see [https://developer.android.com/studio/publish/app-signing.html#generate-key](https://developer.android.com/studio/publish/app-signing.html#generate-key)
-
-![](../images/generate_signed_APK.png)
-
-* 'Release' should be your default choice for "Build Type", 'Debug' is just for people coding.
-* Select the build type you want to build. 
-    * full (i.e. recommendations automatically enacted in closed looping)
-    * openloop (i.e. recommendations given to user to manually enact)
-    * pumpcontrol (i.e. remote control for pump, no looping)
-    * nsclient (i.e. looping data of another user is displayed and careportal entries can be added)
-
-*   Select V1 "Jar Signature" (V2 is optional) and click Finish. 
-
-![release full signatuer](https://user-images.githubusercontent.com/9692866/38299493-8838e38a-37fa-11e8-8c28-3fa6071e7a76.png)
-
-* Please wait for some time until the APK is created. You will get the pop-up below when the process is done.
-
-![](../images/androidstudio3.png)
-
-* Click on 'Show in Explorer'. You'll find the APK is generated, sometimes it may take time to display.
-
-* Copy the APK with the same filename as the buildtype you chose to your android phone, and install it.  If the apk does not install and you have an older version of AndroidAPS on your phone that was signed with a different key then you will need to uninstall this first, remember to export your settings if so.
