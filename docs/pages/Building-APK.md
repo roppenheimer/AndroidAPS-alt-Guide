@@ -10,13 +10,18 @@ You will need to download a local copy of the source code folders (called a repo
 
 * **Download the repository as a zip file** and then unzip the folders and use those as the source for Android Studio. 
 
-In all cases you will need to install [Android Studio](https://developer.android.com/studio/install.html). You will find instructoins how to do this on their website. Once you have installed it you may find that it wants to install various updates - you need to do this.
+In all cases you will need to install [Android Studio](https://developer.android.com/studio/install.html). You will find instructions how to do this on their website. Once you have installed it you may find that it wants to install various updates - you need to do this.
 
 We will look first at using the clone function in Android Studio, as per the following screenshot:
 
 ![](../images/Screenshot_git_clone.png)
 
 You then enter the URL of the repository you want to download. In this case AndroidAPS, but if you are using a Combo you will need to do the same process for Ruffy as well.
+
+The URLs you need  are:
+* [https://github.com/MilosKozak/AndroidAPS](https://github.com/MilosKozak/AndroidAPS)
+* [https://github.com/MilosKozak/ruffy](https://github.com/MilosKozak/ruffy)
+
 
 ![](../images/Screenshot_git_clone_2.png)
 
