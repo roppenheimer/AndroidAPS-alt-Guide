@@ -1,26 +1,26 @@
 The AndroidAPS alt-Guide
 ==============================================
 
-*An unofficial guide to AndroidAPS: the Artificial Panchreas system for Android*
+*An unofficial guide to AndroidAPS: the Artificial pancreas system for Android*
 
-If you're reading this you are almost certainly familiar with insulin pumps and continuous glucose monitors (CGMs) and you will have asked the very obvious question: "Why can't these talk to each other and manage my blood glucose?"
+If you're reading this, you are almost certainly familiar with insulin pumps and continuous glucose monitors (CGMs) and you will have asked the very obvious question: "Why can't these talk to each other and manage my blood glucose?"
 
-.. image:: images/artificial_panchreas.png
+.. image:: images/artificial_pancreas.png
   :width: 696
-  :alt: Artificial Panchreas diagram
+  :alt: Artificial pancreas diagram
 
-Well, they can. AndroidAPS provides a way of taking the data from a Bluetooth enabled CGM, doing the necessary processing and then controlling a Bluetooth enabled insulin pump to emulate what a panchreas would do. It's not a plug an play solution, it can never do as well as a natural pancreas would but with careful setting up and usage it can deliver results that are not far behind.
+Well, they can. AndroidAPS provides a way of taking the data from a Bluetooth enabled CGM, doing the necessary processing and then controlling a Bluetooth enabled insulin pump to emulate what a pancreas would do. It's not a plug and play solution, it can never do as well as a natural pancreas would but with careful setting up and usage it can deliver results that are not far behind.
 
-A natural panchreas can react very quickly to changes in blood glucose, and the insulin that it puts directly into the blood stream takes effect in minutes. By comparison CGM readings are typically be about 10-15 minutes behind, insulin infused into the subcutaneous tissue takes around an hour to reach full effect and the infused insulin takes a long time to die away compared to that from a natural panchreas.
+A natural pancreas can react very quickly to changes in blood glucose, and the insulin that it puts directly into the blood stream takes effect in minutes. By comparison CGM readings are typically be about 10-15 minutes behind, insulin infused into the subcutaneous tissue takes around an hour to reach full effect and the infused insulin takes a long time to die away compared to that from a natural pancreas.
 
-Therefore an artificial panchreas system is to a large extent dependent on being able to make predictions of what your blood glucose is likely to do in the next few hours. It does this using much the same type of calculations as you would normally when working out your dosages, but crucially, it updates these forecasts every five minutes when it gets a fresh reading from your CGM. You still need to tell it about carbs you are about to eat, about if you are about to exercise and so on. You also need to configure it carefully with your basal profile, your various ratios and test them carefully. If you make the effort to understand all these things you can reasonably expect to see blood sugar results which approach those that a non-diabetic person would see.
+Therefore, an artificial pancreas system is to a large extent dependent on being able to make predictions of what your blood glucose is likely to do in the next few hours. It does this by using much the same type of calculations as you would normally when working out your dosages, but crucially, it updates these forecasts every five minutes when it gets a fresh reading from your CGM. You still need to tell it about carbs you are going to eat, and if you are going to exercise and so on. You also need to configure it carefully with your basal profile, your various ratios (I:C ratio and ISF) and test them carefully. If you make the effort to understand all these things you can reasonably expect to see blood sugar results which approach those that a non-diabetic person would see.
 
 **About AndroidAPS**
 
-AndroidAPS is an app that runs a version of `OpenAPS "oref0" and "oref1" algorithm <https://openaps.readthedocs.io/en/latest/>`_ and can communicate with bluetooth-enabled insulin pumps and CGMs. OpenAPS is an algorithm that has been developed independently of any pump or CGM manufacturer and whose underlying premise is that any manufacturer's CGM and any manufacturer's pump, given a suitable interface, could be used to build an artificial panchreas. You can read more about how the OpenAPS model works at the `OpenAPS Reference Design <https://openaps.org/reference-design/>`_
+AndroidAPS is an app that runs a version of `OpenAPS "oref0" and "oref1" algorithm <https://openaps.readthedocs.io/en/latest/>`_ and can communicate with bluetooth-enabled insulin pumps and CGMs. OpenAPS is an algorithm that has been developed independently of any pump or CGM manufacturer and whose underlying premise is that any manufacturer's CGM and any manufacturer's pump, given a suitable interface, could be used to build an artificial pancreas. You can read more about how the OpenAPS model works at the `OpenAPS Reference Design <https://openaps.org/reference-design/>`_
 
 
-Before  you start you should read your way through the information on this site and link up with some of the social media groups where you will be able to discuss with other people using AndroidAPS and ask for help if you need it.
+Before  you start you should read your way through the information on this site and link up with some of the social media groups where you will be able to discuss any problems or queries with other people using AndroidAPS and ask for help if you need it.
 
 **Tell us you are looping**
 
