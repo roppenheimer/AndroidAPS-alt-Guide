@@ -27,7 +27,7 @@ The URLs you need  are:
 
 From here on the process is the same no matter which method you chose for downloading the repository.
 
-* In Android Studio click on "File" and select 'Open an existing Android Studio project' and select the location of the extracted files. You will also need to select which branch of the repository you want to compile. Normally this will be "Master".
+* In Android Studio click on "File", select 'Open an existing Android Studio project' and select the location of the extracted files. You will also need to select which branch of the repository you want to compile. Normally this will be "Master".
 
 ![](../images/androidstudio4.png)
 
@@ -50,13 +50,13 @@ Having done that, click "Next" and you will get the following dialogue:
 ![release full signature](https://user-images.githubusercontent.com/9692866/38299493-8838e38a-37fa-11e8-8c28-3fa6071e7a76.png)
 
 * Select the build type and flavor as shown in the screenshot.  Build Type = 'Release' should be your default choice. ('Debug' is just for people doing coding.)
-* Select the flavor you want to build. You need "full".
+* Select the flavor you want to build. Normally you need "full".
 
 
-    * full (i.e. recommendations automatically enacted in closed looping)
-    * openloop (i.e. recommendations given to user to manually enact)
-    * pumpcontrol (i.e. remote control for pump, no looping)
-    * nsclient (i.e. looping data of another user is displayed and careportal entries can be added)
+    * full (i.e. recommendations are automatically enacted in a closed loop)
+    * openloop (i.e. recommendations are given to the user to enact manually)
+    * pumpcontrol (i.e. basic remote control for the pump, no looping)
+    * nsclient (i.e. Nightscout client, displays the loop data of another user and enables Careportal entries to be added)
 
 *   Select V1 "Jar Signature" (V2 is optional) and click Finish. 
 
@@ -64,6 +64,6 @@ Having done that, click "Next" and you will get the following dialogue:
 
 ![](../images/androidstudio3.png)
 
-* Click on 'Show in Explorer'. You'll find the APK is generated, sometimes it may take time to display. If yo uare having difficulty finding the .apk file you should find the AndroidAPS file at {yourfolder}\app\full\release\app-full-release.apk and if you are looking for the "wear" file for a watch you can look for {yourfolder}\app\release\wear-release.apk. It is a good idea to make copies of these files somewhere you can find them again easily. 
+* Click on 'Show in Explorer'. You'll find the APK is generated, sometimes it may take time to display. If you are having difficulty finding the .apk file you should find the AndroidAPS file at {yourfolder}\app\full\release\app-full-release.apk and if you are looking for the "wear" file for a watch you can look for {yourfolder}\app\release\wear-release.apk. It is a good idea to make copies of these files somewhere you can find them again easily. 
 
-* Copy the APK with the same filename as the buildtype you chose to your android phone, and install it.  If the apk does not install and you have an older version of AndroidAPS on your phone that was signed with a different key then you will need to uninstall this first, remember to export your settings if so.
+* You now need to copy the .apk files onto your phone and install them (just tap and follow the instructions). If you have not already done so you may need to set your phone to install .apk files from unknown sources. If you already have an older version of AndroidAPS on your phone that was signed with a different key then you will need to uninstall it first, but remember to export your settings first so you can reload them to the new installation.
