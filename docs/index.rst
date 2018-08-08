@@ -18,6 +18,10 @@ AndroidAPS is an app that runs a version of `OpenAPS "oref0" and "oref1" algorit
 
 Before  you start you should read your way through the information on this site and link up with some of the social media groups where you will be able to discuss with other people using AndroidAPS and ask for help if you need it.
 
+**Tell us you are looping**
+
+Once you have got your loop working, please let us know by `filing in the online form <pages/tell_us_looping.md>`. You can find out more `here <pages/tell_us_looping.md>`
+
 .. note:: 
 	**Disclaimer And Warning**
 
