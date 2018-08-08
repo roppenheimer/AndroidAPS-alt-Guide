@@ -6,9 +6,9 @@ Designing Your Rig
    :glob:
     
    A Typical Rig
-   What You WIll Nead <pages/What-you-need.md>
-   Choosing Your Pump <pages/Pump-Choices.md>
-   Your Choice of Pump <pages/index_pumps.rst>
-   Blood Glucose Source <pages/BG-Source.md>
-   Choosing a Phone <pages/Phones.md>
-   Adding a Smartwatch <pages/Watchfaces.md>
+   What you will need <pages/What-you-need.md>
+   Choosing your pump <pages/Pump-Choices.md>
+   Your choice of pump <pages/index_pumps.rst>
+   Blood gGlucose source <pages/BG-Source.md>
+   Choosing a shone <pages/Phones.md>
+   Adding a smartwatch <pages/Watchfaces.md>
