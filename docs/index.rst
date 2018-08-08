@@ -9,6 +9,10 @@ Well, they can. AndroidAPS provides a way of taking the data from a Bluetooth en
 
 A natural panchreas can react very quickly to changes in blood glucose, and the insulin that it puts directly into the blood stream takes effect in minutes. By comparison CGM readings are typically be about 10-15 minutes behind, insulin infused into the subcutaneous tissue takes around an hour to reach full effect and the infused insulin takes a long time to die away compared to that from a natural panchreas.
 
+.. image:: path/artificial_panchreas.png
+  :width: 696
+  :alt: Artificial Panchreas diagram
+
 Therefore an artificial panchreas system is to a large extent dependent on being able to make predictions of what your blood glucose is likely to do in the next few hours. It does this using much the same type of calculations as you would normally when working out your dosages, but crucially, it updates these forecasts every five minutes when it gets a fresh reading from your CGM. You still need to tell it about carbs you are about to eat, about if you are about to exercise and so on. You also need to configure it carefully with your basal profile, your various ratios and test them carefully. If you make the effort to understand all these things you can reasonably expect to see blood sugar results which approach those that a non-diabetic person would see.
 
 **About AndroidAPS**
