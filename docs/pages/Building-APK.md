@@ -59,6 +59,6 @@ Having done that, click "Next" and you will get the following dialogue:
 
 ![](../images/androidstudio3.png)
 
-* Click on 'Show in Explorer'. You'll find the APK is generated, sometimes it may take time to display.
+* Click on 'Show in Explorer'. You'll find the APK is generated, sometimes it may take time to display. If yo uare having difficulty finding the .apk file you should find the AndroidAPS file at {yourfolder}\app\full\release\app-full-release.apk and if you are looking for the "wear" file for a watch you can look for {yourfolder}\app\release\wear-release.apk. It is a good idea to make copies of these files somewhere you can find them again easily. 
 
 * Copy the APK with the same filename as the buildtype you chose to your android phone, and install it.  If the apk does not install and you have an older version of AndroidAPS on your phone that was signed with a different key then you will need to uninstall this first, remember to export your settings if so.
