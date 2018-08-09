@@ -1,8 +1,8 @@
 # Installing AndroidAPS - Build the APK
 
-AndroidAPS and Ruffy come in the form of a source code that you have to download and compile using Android Studio. The process is not difficult once you have worked out what to do.
+AndroidAPS and Ruffy come in the form of a source code that you must download and compile using Android Studio. The process is not difficult once you have worked out what to do.
 
-You will need to download a local copy of the source code folders (called a repository) onto your PC. There are a number of ways you can do this:
+You will need to download a local copy of the source code folders (called a repository) onto your PC. There are several ways to do this:
 
 * **Install GitHub desktop** (recommended) on your PC. This will download the repository for you and automatically download any updates that occur in the future. 
 
