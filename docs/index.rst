@@ -26,6 +26,8 @@ Before  you start you should read your way through the information on this site 
 
 Once you have got your loop working, please let us know by `filling in the online form <pages/tell_us_looping.html>`_. Just in case we need to notify you of urgent updates. You can find out more `here <pages/tell_us_looping.html>`_
 
+You will find the `latest count of how many people are looping here<https://openaps.org/outcomes/>`_.
+
 .. note:: 
 	**Disclaimer And Warning**
 

@@ -2,7 +2,7 @@
 
 Before you build your rig you're going to do a lot of reading up to understand how it all works and get the best out of it. We've put together a list of places you can go to get you started and hopefully answer a lot of your questions.
 
-## Further reading
+## DIY Artificial Pancreas articles
 
 [OpenAPS.org #wearenotwaiting](https://openaps.org/)
 
@@ -10,15 +10,21 @@ Before you build your rig you're going to do a lot of reading up to understand h
 
 [Loop Docs](https://loopkit.github.io/loopdocs/)
 
-[Fine-Tuning settings](http://seemycgm.com/2017/10/29/fine-tuning-settings/) - Katie DiSimone
-
-[Tim Omer – Hypodiabetic Blog](https://www.hypodiabetic.co.uk/)
-
-[DIYPS](https://diyps.org/)
-
-[Diabetes and Technology - Where Diabetes meets Tech](http://www.diabettech.com/)
+[DIYPS.org](https://diyps.org/)
 
 [OpenAPS Reference Design](https://openaps.org/reference-design/)
+
+[Introducing oref1 and super-microboluses (SMB) (and what it means compared to oref0, the original #OpenAPS algorithm)](https://diyps.org/2017/04/30/introducing-oref1-and-super-microboluses-smb-and-what-it-means-compared-to-oref0-the-original-openaps-algorithm/) - Dana Lewis
+
+[oref1 (super advanced features)](http://openaps.readthedocs.io/en/dev/docs/Customize-Iterate/oref1.html)
+
+## Blogs
+
+[Fine-Tuning settings](http://seemycgm.com/2017/10/29/fine-tuning-settings/) - Katie DiSimone
+
+[Hypodiabetic Blog](https://www.hypodiabetic.co.uk/) - Tim Omer
+
+[Diabetes and Technology - Where Diabetes meets Tech](http://www.diabettech.com/)
 
 [Why we are regularly wrong in the duration of insulin action (DIA) times we use, and why it matters](http://www.diabettech.com/insulin/why-we-are-regularly-wrong-in-the-duration-of-insulin-action-dia-times-we-use-and-why-it-matters/)
 
