@@ -4,9 +4,11 @@
 
 ## Basic basal calculations
 
-OpenAPS follows the same logic that a person with diabetes uses to make dosing decisions. Generally, this means looking at the current BG; subtracting the target; and applying your ISF (correction factor) to determine how much insulin is needed to correct the blood sugar to target. You can subtract any "insulin on board" from the amount needed. You can also add insulin needed to cover carbohydrates.
+OpenAPS follows the same logic that a person with diabetes uses to make dosing decisions. Generally, this means looking at the current BG in relation to the required target level and applying and appropriate correcton based on your ISF (Insulin Sensitivity Factor) to determine how much insulin is needed to bring the blood sugar back to target. You would then subtract any "insulin on board" (IOB) remaining from any historical boluses and add any insulin needed to cover carbohydrates.
 
-In AndroidAPS, we can do both a positive (more insulin) and a negative (less insulin) correction by making adjustments to your underlying basal rates to adjust insulin up or down to help bring the "eventual" BG into target.
+In OpenAPS performs this calculation every five minutes as it receives fresh BG readings from the sensor. Having calculated the dose required it then works out a forecast of BG with five minute increments until the end of DIA (duration of Insulin Action) when all the insulin is assumed to have been used up. You can read about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
+
+You rig can make adjustments to the insulin dose by increawe can do both a positive (more insulin) and a negative (less insulin) correction by making adjustments to your underlying basal rates to adjust insulin up or down to help bring the "eventual" BG into target.
 
 
 >The core, lowest level logic behind any oref0 implementation of OpenAPS can be found in [`oref0/lib/determine-basal/determine-basal.js`](https://github.com/openaps/oref0/blob/master/lib/determine-basal/determine-basal.js). That code pulls together the required inputs (namely, recent CGM readings, current pump settings, including insulin on board and carbohydrates consumed, and your profile settings) and performs the calculations to make the recommended changes in temp basal rates that OpenAPS could/will enact.
