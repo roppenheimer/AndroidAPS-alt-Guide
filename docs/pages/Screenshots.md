@@ -47,9 +47,11 @@ Section C: shows the various elements that have been used to calculate the bolus
 
 If you need to tell AndroidAPS about some extra carbs (or equivalent) you can do this here, without necessarily bolusing. A nice thing about this feature is that it allows you to tell the app about long lasting carbs that you might normally need an extended bolus for. These appear in your timeline in orange while they are still in the future and then change to the normal colour as time moves on. 
 
-In section A you enter any temporary target you think is appropriate, then in section B you can tell it (TIME) about how long you want the start of the carb action to be delayed  (this can be a negative if you want the start to be in the past ) the DURATION you expect the carbs to last in hours, and finally the amount of carbs (or equivalent) in grams, 
+In section A you enter any temporary target (TT) you think is appropriate, then in section B you can tell it (TIME) about how long you want the start of the carb action to be delayed  (this can be a negative if you want the start to be in the past ) the DURATION you expect the carbs to last in hours, and finally the amount of carbs (or equivalent) in grams. 
 
 This tells the AndroidAPS algorithm that it needs to use the calculation for carbs on board rather than the one for controlling basal levels in the absence of carbs. If you have SMB (Super Micro Bolus) enabled then they will be issued if the algorithm calculates that they are necessary.
+
+The "HYPO" temporary target is designed to prevent the rig from giving extra insulin in response to your rescue carbs. It will be preset automatically if your BG at the time is less than 4.0 mmol/L. Or you can simply select the HYPO TT before inputting the amount of your rescue carbs.
 
 ## Actions
 
