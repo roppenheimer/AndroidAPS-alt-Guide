@@ -4,33 +4,14 @@
 
 ## Basic basal calculations
 
-OpenAPS follows the same logic that a person with diabetes uses to make dosing decisions. Generally, this means looking at the current BG in relation to the required target level and applying and appropriate correcton based on your ISF (Insulin Sensitivity Factor) to determine how much insulin is needed to bring the blood sugar back to target. You would then subtract any "insulin on board" (IOB) remaining from any historical boluses and add any insulin needed to cover carbohydrates.
+OpenAPS follows the same logic that a person with diabetes uses to make dosing decisions. Generally, this means looking at the current BG; subtracting the target; and applying your ISF (correction factor) to determine how much insulin is needed to correct the blood sugar to target. You can subtract any "insulin on board" from the amount needed. You can also add insulin needed to cover carbohydrates.
 
-In OpenAPS performs this calculation every five minutes as it receives fresh BG readings from the sensor. Having calculated the dose required it then works out a forecast of BG with five minute increments until the end of DIA (duration of Insulin Action) when all the insulin is assumed to have been used up. You can read about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
-
-You rig can make adjustments to the insulin dose by increawe can do both a positive (more insulin) and a negative (less insulin) correction by making adjustments to your underlying basal rates to adjust insulin up or down to help bring the "eventual" BG into target.
+In AndroidAPS, we can do both a positive (more insulin) and a negative (less insulin) correction by making adjustments to your underlying basal rates to adjust insulin up or down to help bring the "eventual" BG into target.
 
 
->The core, lowest level logic behind any oref0 implementation of OpenAPS can be found in [`oref0/lib/determine-basal/determine-basal.js`](https://github.com/openaps/oref0/blob/master/lib/determine-basal/determine-basal.js). That code pulls together the required inputs (namely, recent CGM readings, current pump settings, including insulin on board and carbohydrates consumed, and your profile settings) and performs the calculations to make the recommended changes in temp basal rates that OpenAPS could/will enact.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
+The core, lowest level logic behind any oref0 implementation of OpenAPS can be found in [`oref0/lib/determine-basal/determine-basal.js`](https://github.com/openaps/oref0/blob/master/lib/determine-basal/determine-basal.js). That code pulls together the required inputs (namely, recent CGM readings, current pump settings, including insulin on board and carbohydrates consumed, and your profile settings) and performs the calculations to make the recommended changes in temp basal rates that OpenAPS could/will enact.
+```
 
 
 ## OpenAPS decision inputs
@@ -51,23 +32,16 @@ This includes:
   * `bolusiob` = Units of bolus Insulin on Board. Does not take into account any temp basals.
 
 * We also add other calculations that we do to better predict and analyze what is happening:
-  * `BGI` (Blood Glucose Impact) = the degree to which BG “should” be rising or falling based on insulin activity alone.
   * `dev` or `deviation` = how much actual BG change is deviating from the BGI 
- 
+  * `BGI` (Blood Glucose Impact) = the degree to which BG “should” be rising or falling based on insulin activity alone. 
   * `ISF` = ISF is anchored from the value in your pump; but if you use autotune and/or autosens, the ISF value shown is what is currently being used by OpenAPS, as modified by the Sensitivity Ratio
   * `CR (Carb Ratio)` = As with ISF, it is anchored from the value in your pump; but if you use autotune and/or autosens, the CR value shown is what is currently being used by OpenAPS
   * `Eventual BG `= what BG is estimated to be by the end of DIA
-  * `minGuardBG` - is the the lowest your BG is estimated to get over the period of DIA (Duration of Insulin Action). 
-  * `IOBpredG` - predictions based on IOB alone.
-  * `UAMpredBG` - predictions based on current deviations ramping down to zero at the same rate they have been recently. These represent the last entry on the purple prediction lines.
-  * `Safety Threshold` = `min_bg - 0.5*(min_bg-40)` where `min_bg` is your BG target. This is the level below which `minGuardBG` will not be allowed to go.
-  * `Sensitivity Ratio` = the ratio of how sensitive or resistant you are. This ratio is calculated by "Autosensitivity" (or "autosens"), and is applied to both basal and ISF to adjust accordingly. <1.0 = sensitive; >1.0 = resistant.  If your preferences allow it, sensitivityRatio can also be modified by temp targets.
+  * `minGuardBG, IOBpredG, UAMpredBG` = eventual BG predictions based on 1) the lowest your BG is estimated to get over DIA; 2) predictions based on IOB only; and 3) predictions based on current deviations ramping down to zero at the same rate they have been recently. These represent the last entry on the purple prediction lines.
+  * `Sensitivity Ratio` = the ratio of how sensitive or resistant you are. This ratio is calculated by "Autosensitivity" (or "autosens"), and this ratio is applied to both basal and ISF to adjust accordingly. <1.0 = sensitive; >1.0 = resistant.  If your preferences allow it, sensitivityRatio can also be modified by temp targets.
   * `Target` = pulled from your pump target; overridden if you have enacted a temporary target running.
   * `Carb Impact` = we estimate carb impact by looking at what we predict to happen with your carbs entered (`predCI`) and adding it to our estimate of the remaining carb impact (`remainingCI`)
-
-
-  [Understanding Insulin on Board (IOB) Calculations](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html)
-
+  * `Safety Threshold` = `min_bg - 0.5*(min_bg-40)` where `min_bg` is your BG target
 
   ![Estimating carb impact](../Images/Carb_predictions.jpg)
   
