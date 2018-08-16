@@ -1,5 +1,7 @@
 # Preferences
 
+![Accessing the sub menus](../images/sub_menus.png)
+
 To access Preferences click on AndroidAPS to open the Overview screen, then tap the three dots on the top right of the screen and select Preferences. You are then presented with the following options:
 
 ## Password for settings
