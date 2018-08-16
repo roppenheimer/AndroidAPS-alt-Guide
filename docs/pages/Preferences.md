@@ -2,7 +2,7 @@
 
 ![Accessing the sub menus](../images/sub_menus.png)
 
-To access Preferences click on AndroidAPS to open the Overview screen, then tap the three dots on the top right of the screen and select Preferences. You are then presented with the following options:
+To access Preferences click on AndroidAPS to open the Overview screen, then tap the three dots on the top right of the screen and select Preferences. You are then presented with the following options:-
 
 ## Password for settings
 This allows you to set a password in order to prevent accidental or unauthorised changes to Preferences. If you set a password here you will be required to your password in order to access Preferences. To remove the password option, delete the text you have entered under the words Password for settings.
