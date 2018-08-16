@@ -14,6 +14,8 @@ Section C: The latest blood glucose reading from your CGM, how long ago it was r
 
 The insulin on board figure would be zero if just your standard basal was running and there was no insulin remaining from previous boluses. The figures in brackets show how much consists of insulin remaining from previous boluses and how much is a basal variation due to previous TBRs programmed by AAPS. This second component may be negative if there have recently been periods of reduced basal.
 
+If you have a label **AS** as well as the IOB and COB this refers to the current AutoSense sensitivity.
+
 Section D: Is where you can select which information is displayed on the charts below. Press on the down arrow to see your options.
 
 Section E: Is the graph showing your blood glucose (BG) as read from your glucose monitor (CGM) it also shows Nightscout notifications such as fingerstick calibrations, and carbs entries. The predictions lines if you have them selected are: ORANGE predicts where your BG will go based on the current pump settings and known carbs on board (CoB) assuming that nothing changes. This line only appears if there are known CoB. The LIGHT BLUE line shows what would happen if those carbs didn't exist, for example if you dialled in some carbs and then didn't eat them. And the DARK BLUE line shows how that trajectory would change if the pump stopped all insulin delivery (0% TBR).
