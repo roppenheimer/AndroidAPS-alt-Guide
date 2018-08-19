@@ -6,15 +6,15 @@ At its most basic OpenAPS works in much the same way that a person with diabetes
 
 Firstly, OpenAPS assumes that your programmed basal rates are correct and that if it does nothing then your blood glucose (BG) will remain constant. It uses this as a zero baseline. It can increase your insulin on board (IOB) by increasing the basal rate and reduce it by decreasing the basal rate - to zero if necessary.
 
-Because it knows your pump history and the rate that insulin decays - or is "used up" - is can mantain a running total of all previous insulin doses to give an IOB figure relative to your programmed basal level.
+Because it knows your pump history and the rate that insulin decays - or is "used up" - it can mantain a running total of all previous insulin doses (boluses and TBRs) to give an IOB figure relative to your programmed basal level.
 
-In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor.
+In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor. The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). 
 
-The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). In an ideal world:
+In an ideal world:
 
     BG - ISF x IOB = eventualBG = targetBG.
 
-By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is just enough insulin to bring BG eventually to the preconfigured target.
+By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is just enough insulin (IOB) to bring BG eventually to the preconfigured target.
 
 ![](../images/basal_adjustment.png)
 
