@@ -24,6 +24,7 @@ What OpenAPS does is to look at the upward pressure on BG and use that to estima
 
 More specifically, OpenAPS uses the rate of decay of the IOB to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop uner the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as "IOB". If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
 
+x
 
 
 
