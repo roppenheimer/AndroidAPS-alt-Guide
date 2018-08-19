@@ -14,6 +14,12 @@ The result of this calculation is an estimate of the "eventual blood glucose" (e
 
     BG - ISF x IOB = eventualBG = targetBG.
 
+
+![](../images/basal_adjustment.png)
+
+Fig: Basals are constantly adjusted so that BG - ISF x IOB = targetBG
+
+
 You can read about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
 
 ## Adding in the carbs
@@ -26,7 +32,7 @@ OpenAPS uses the rate at which insulin is being used up to calculate an expected
 
 
 
-
+# Deviations, Blood Glucose Impact, 
 
 --------------
 
