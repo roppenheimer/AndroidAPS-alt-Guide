@@ -1,14 +1,37 @@
-# Understanding the determine-basal logic
+# How OpenAPS works
+
+At its most basic OpenAPS works in much the same way that a person with diabetes does to determine insulin doses, corrections and the handling of carbohydrates. It uses the ratios that you are already familiar with and uses them to create a running forecast of what's happening with your blood sugar. The main difference is that OpenAPS updates this calculation every five minutes and that is performs the calculation much more precisely and takes more factors into account than a person with diabetes could do in practical terms in real life. 
+
+## The basic basal calculations
+
+Firstly, OpenAPS assumes that your programmed basal rates are correct and that if it does nothing then your blood glucose (BG) will remain constant. It uses this as a zero baseline. It can increase your insulin on board (IOB) by increasing the basal rate and reduce it by decreasing the basal rate - to zero if necessary.
+
+Because it knows your pump history and the rate that insulin decays - or is "used up" - is can mantain a running total of all previous insulin doses to give an IOB figure relative to your programmed basal level.
+
+In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor.
+
+The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). In an ideal world:
+
+    BG - ISF x IOB = eventualBG = targetBG.
+
+You can read about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
+
+## Adding in the carbs
+
+We now need to take into account the effect of carbohyrdates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know, different carbs are absorbed at different rates, and other factors such as the amount of exercise all have an effect so we need something more dynamic. 
+
+What OpenAPS does is to look at the upward pressure on BG and use that to estimate the rate at which carbs are being absorbed and then match that against the known insulin absorption rate.
+
+More specifically, OpenAPS uses the rate of decay of the IOB to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop uner the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as "IOB". If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
 
 
 
-## Basic basal calculations
 
-OpenAPS follows the same logic that a person with diabetes uses to make dosing decisions. Generally, this means looking at the current BG in relation to the required target level and applying and appropriate correcton based on your ISF (Insulin Sensitivity Factor) to determine how much insulin is needed to bring the blood sugar back to target. You would then subtract any "insulin on board" (IOB) remaining from any historical boluses and add any insulin needed to cover carbohydrates.
+--------------
 
-In OpenAPS performs this calculation every five minutes as it receives fresh BG readings from the sensor. Having calculated the dose required it then works out a forecast of BG with five minute increments until the end of DIA (duration of Insulin Action) when all the insulin is assumed to have been used up. You can read about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
 
-You rig can make adjustments to the insulin dose by increawe can do both a positive (more insulin) and a negative (less insulin) correction by making adjustments to your underlying basal rates to adjust insulin up or down to help bring the "eventual" BG into target.
+
+
 
 
 >The core, lowest level logic behind any oref0 implementation of OpenAPS can be found in [`oref0/lib/determine-basal/determine-basal.js`](https://github.com/openaps/oref0/blob/master/lib/determine-basal/determine-basal.js). That code pulls together the required inputs (namely, recent CGM readings, current pump settings, including insulin on board and carbohydrates consumed, and your profile settings) and performs the calculations to make the recommended changes in temp basal rates that OpenAPS could/will enact.
