@@ -1,6 +1,6 @@
 # How OpenAPS works
 
-At its most basic OpenAPS works in much the same way that a person with diabetes does to determine insulin doses, corrections and the handling of carbohydrates. It works with the ratios that you are already familiar with and uses them to create a running forecast of what's happening with your blood sugar. The main difference is that OpenAPS updates this calculation every five minutes and that is performs the calculation much more precisely and takes more factors into account than a person with diabetes could do in practical terms in real life. 
+At its most basic OpenAPS works in much the same way that a person with diabetes does to determine insulin doses, corrections and the handling of carbohydrates. It works with the ratios that you are already familiar with and uses them to create a running forecast of what's happening with your blood sugar. The main difference is that OpenAPS updates this calculation every five minutes and that it performs the calculation much more precisely and takes more factors into account than a person with diabetes could do in practical terms in real life. 
 
 ## The basic basal calculations
 
@@ -18,11 +18,11 @@ You can read about how OpenAPS calculates the amount of IOB in greater detail [h
 
 ## Adding in the carbs
 
-We now need to take into account the effect of carbohyrdates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know, different carbs are absorbed at different rates, and other factors such as the amount of exercise all have an effect so we need something more dynamic. 
+We now need to take into account the effect of carbohyrdates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know, different carbs are absorbed at different rates, and other factors, such as the amount of exercise, all have an effect - so we need something more dynamic. 
 
-What OpenAPS does is to look at the upward pressure on BG and use that to estimate the rate at which carbs are being absorbed and then match that against the known insulin absorption rate.
+What OpenAPS does is to look at the upward pressure on BG and use that to estimate the rate at which carbs are being absorbed and then use that to estimate the rate at which insulin is needed to balance that upward pressure.
 
-More specifically, OpenAPS uses the rate of decay of the IOB to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop uner the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as "IOB". If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
+OpenAPS uses the rate at which insulin is being used up to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop under the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as the "IOB" prediction. If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
 
 
 
