@@ -14,7 +14,7 @@ The result of this calculation is an estimate of the "eventual blood glucose" (e
 
     BG - ISF x IOB = eventualBG = targetBG.
 
-So by constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is just enough insulin to bring BG eventually to the preconfigured target.
+By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is just enough insulin to bring BG eventually to the preconfigured target.
 
 ![](../images/basal_adjustment.png)
 
