@@ -14,13 +14,14 @@ The result of this calculation is an estimate of the "eventual blood glucose" (e
 
     BG - ISF x IOB = eventualBG = targetBG.
 
+So by constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is just enough insulin to bring BG eventually to the preconfigured target.
 
 ![](../images/basal_adjustment.png)
 
 Fig 1: Basals are constantly adjusted so that BG - ISF x IOB = targetBG
 
 
-You can read about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
+You can read more about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
 
 ## Adding in the carbs
 
