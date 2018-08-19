@@ -1,6 +1,6 @@
 # How OpenAPS works
 
-At its most basic OpenAPS works in much the same way that a person with diabetes does to determine insulin doses, corrections and the handling of carbohydrates. It uses the ratios that you are already familiar with and uses them to create a running forecast of what's happening with your blood sugar. The main difference is that OpenAPS updates this calculation every five minutes and that is performs the calculation much more precisely and takes more factors into account than a person with diabetes could do in practical terms in real life. 
+At its most basic OpenAPS works in much the same way that a person with diabetes does to determine insulin doses, corrections and the handling of carbohydrates. It works with the ratios that you are already familiar with and uses them to create a running forecast of what's happening with your blood sugar. The main difference is that OpenAPS updates this calculation every five minutes and that is performs the calculation much more precisely and takes more factors into account than a person with diabetes could do in practical terms in real life. 
 
 ## The basic basal calculations
 
