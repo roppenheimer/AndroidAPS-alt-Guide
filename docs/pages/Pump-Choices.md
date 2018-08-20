@@ -1,13 +1,28 @@
 # Pumps compatible with AndroidAPS
 
-AndroidAPS currently works with the Dana* R, Dana* RS and Combo pumps. The Dana* R and Combo have been available on the market for a while so many people already have access to these, and Dana* RS as an upgrade to the Dana* R is becoming a more common choice.  If you need to choose a pump to upgrade to or buy then people often ask which to choose. Details of the various distributors is in [this spreadsheet](https://drive.google.com/open?id=1CRfmmjA-0h_9nkRViP3J9FyflT9eu-a8HeMrhrKzKz0), please share the details of yours if not already listed.
+Currently with AndroidAPS you essentially have the choice of two insulin pumps, the Roche Spirit Combo and the SOOIL Dana* R or RS. 
+
+## Roche Spirit Combo
+
+![](../images/combo_pump.png)
+
+The Combo is a widely available pump and all versions of it can be used for looping with AndroidAPS. You will need to install a special driver on your phone known as Ruffy which emulates the Combo handset and issues the appropriate commands via Bluetooth. This makes it somewhat slow to transfer commands to the pump but that's not a problem in this situation.
 
 
+## The SOOIL Dana* R or RS
 
 ![](../images/Dana_RS_pump.png)
 
+The Dana* RS is an upgrade to the Dana* R and both have been designed with remote operation via Bluetooth in mind. 
 
-![](../images/combo_pump.png)
+currently works with the Dana* R, Dana* RS and Combo pumps. The Dana* R and Combo have been available on the market for a while so many people already have access to these, and Dana* RS as an upgrade to the Dana* R is becoming a more common choice.  If you need to choose a pump to upgrade to or buy then people often ask which to choose. Details of the various distributors is in [this spreadsheet](https://drive.google.com/open?id=1CRfmmjA-0h_9nkRViP3J9FyflT9eu-a8HeMrhrKzKz0), please share the details of yours if not already listed.
+
+
+
+
+
+
+
 
 The Combo is a solid pump. And loopable.
 
