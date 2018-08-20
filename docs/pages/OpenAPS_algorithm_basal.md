@@ -10,18 +10,18 @@ Because it knows your pump history and the rate that insulin decays - or is "use
 
 In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor. The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). 
 
-In an ideal world:
+So ideally the following would always be true:
 
     BG - ISF x IOB = eventualBG = targetBG.
 
-By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is just enough insulin (IOB) to bring BG eventually to the preconfigured target.
+By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is the right amount of insulin on board (IOB) to bring BG eventually to the preconfigured target.
 
 ![](../images/basal_adjustment.png)
 
 Fig 1: Basals are constantly adjusted so that BG - ISF x IOB = targetBG
 
 
-You can read more about how OpenAPS calculates the amount of IOB in greater detail [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
+You can read in greater detail about how OpenAPS calculates the amount of IOB [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
 
 ## Adding in the carbs
 
@@ -32,8 +32,16 @@ What OpenAPS does is to look at the upward pressure on BG and use that to estima
 OpenAPS uses the rate at which insulin is being used up to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop under the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as the "IOB" prediction. If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
 
 
+# Blood Glucose Impact, Carb Impact and Deviations
 
-# Deviations, Blood Glucose Impact, 
+
+
+
+
+
+
+
+
 
 --------------
 
