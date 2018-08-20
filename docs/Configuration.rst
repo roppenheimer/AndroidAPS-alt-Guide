@@ -10,5 +10,5 @@ Configuring your rig
    Preferences <pages/Preferences.md>
    Profiles <pages/Profiles.md> 
    Objectives <pages/Objectives.md>
-   Fine Tuning Your Rig <pages/Fine_Tuning.md>
+
 
