@@ -10,7 +10,7 @@ The Combo is a widely available pump and all versions of it can be used for loop
 
 Due to the vagaries of the version of Bluetooth on the Combo you will have to use a phone running either Android 8.1 or an older phone which has LineageOS 14.1 installed. (LineageOS is an alternative verson of Android and is widely and freely available.)
 
-You will also need to alter some of the settings in the configuration of your pump. This is quite simple and requires an infrared cable and some configuation software both available from Roche or can be purchased online fairly cheaply. Or if you join one of the AndroidAPS facebook groups you will likely be bale to borrow one.
+You will also need to alter some of the settings in the configuration of your pump. This is quite simple and requires an infrared cable and some configuation software both freely available from Roche or can be purchased online fairly cheaply. Or if you join one of the AndroidAPS facebook groups you will likely be bale to borrow one.
 
 The Combo is a good solid pump, reliable and free of unnecessary frills. It also uses readily available size AA batteries - or equivalent rechargeables.
 
