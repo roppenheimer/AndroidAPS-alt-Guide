@@ -29,6 +29,4 @@ Details of the various distributors for these pumps is in [this spreadsheet](htt
 It is possible that other pumps will join the list in due course - but at this point these are your only choices.
 
 
-xx
-
 
