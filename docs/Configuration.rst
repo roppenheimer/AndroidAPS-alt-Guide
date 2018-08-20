@@ -6,7 +6,6 @@ Configuring your rig
    :glob:
    
    Config Builder <pages/Config-Builder.md>
-   BG Source <pages/BG-Source.md>
    Configuring Your Pump <pages/index_pumps.rst>
    Preferences <pages/Preferences.md>
    Profiles <pages/Profiles.md> 
