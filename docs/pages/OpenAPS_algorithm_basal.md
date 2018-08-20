@@ -25,7 +25,7 @@ You can read in greater detail about how OpenAPS calculates the amount of IOB [h
 
 ## Adding in the carbs
 
-We now need to take into account the effect of carbohyrdates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know, different carbs are absorbed at different rates, and other factors, such as the amount of exercise, all have an effect - so we need something more dynamic. 
+We now need to take into account the effect of carbohydrates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know, different carbs are absorbed at different rates, and other factors, such as the amount of exercise, all have an effect - so we need something more dynamic. 
 
 What OpenAPS does is to look at the upward pressure on BG and use that to estimate the rate at which carbs are being absorbed and then use that to estimate the rate at which insulin is needed to balance that upward pressure.
 
