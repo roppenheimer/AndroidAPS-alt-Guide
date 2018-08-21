@@ -14,6 +14,7 @@ Send a SMS to the phone with AndroidAPS running from your approved phone number(
 
 
 
+
 | Command            | Response                                                                                                                                         |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | BG                 | Last BG: 5.6 4min ago, Delta: -0,2 mmol, IOB: 0.20U (Bolus: 0.10U Basal: 0.10U)                                                                  |
@@ -29,3 +30,4 @@ Send a SMS to the phone with AndroidAPS running from your approved phone number(
 | BASAL 0.3          | To start basal 0.3U/h reply with code Swe Remote basal setting is not allowed (if remote commands not allowed)                                   |
 | BOLUS 1.2          | To deliver bolus 1.2U reply with code Rrt Remote bolus not allowed (_if within 15 min after last bolus command or remote commands not allowed_ ) |
 | CAL 5.6            | To send calibration 5.6 reply with code Rrt Calibration sent (_if xDrip is installed. Accepting calibrations must be enabled in xDrip+_ )        |
+
