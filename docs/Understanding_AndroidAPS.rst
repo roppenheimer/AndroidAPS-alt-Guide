@@ -8,8 +8,8 @@ Understanding AndroidAPS
    AndroidAPS screenshots explained <pages/Screenshots.md>
    OpenAPS Features <pages/Open-APS-features.md>
    The OpenAPS algorithm <pages/OpenAPS_algorithm_basal.md>
-   Sensitivity and Extended Carbs <pages/Sensitivity-detection-and-COB.md>
+   Understanding Sensitivity <pages/Sensitivity-detection-and-COB.md>
    Advanced features <pages/Advanced Features>
-   Super Micro Bolus
+   Super Micro Bolus <pages/super_micro_bolus.md>
    Extended Carbs <pages/Extended-Carbs.md>
    SMS Commands <pages/SMS-Commands.md>
