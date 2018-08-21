@@ -2,7 +2,7 @@
 
 ## The Overview screen
 
-![Overview](../images/Screenshot_Overview_screen.png)
+![Overview](../images/Screenshot_overview_screen.png)
 
 This is the first screen you will come across when you open AndroidAPS and it contains most of the information that you will need day to day.
 
