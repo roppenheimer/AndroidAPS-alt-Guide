@@ -1,8 +1,19 @@
 # BG sources
 
+AndroidAPS needs a source of blood glucose information. This generally would be in the form on an app which links to your CGM device and sends the data to to AndroidAPS. There are a number of choices:
+
+  * __xDrip+__ (most people's preferred option) can link to Dexcom G5 and G6 CGMs, the Freestyle Libre via a Bluetooth adapter such as MiaoMiao, the Medtronic 640G and the Medtrum A6. The quality of the data from these different devices varies and some of the advanced features of AndroidAPS can only be used with the "cleaner" CGM sources such as the Dexcom. xDrip+ also integrates well with Nightscout.
+  * __Dexcom G5 app__ this is a modified version of the app provided by Dexcom which has been patched so that it will interface with AndroidAPS and pass the data on.
+  * __Glimp__ is an app designed as an alternative reader for the Freestyle Libre using the NFC reader chip in an Android phone.
+  * __Nightscout__ you can use BG values downloaded from Nightscout although this will obviously only work while you have a live internet connection to your Nightscout server. 
+
+
+
+
+
 **For users of Dexcom:**<Br>
 _If using xdrip…_<br>
-* If not already set up then download [xdrip](https://github.com/NightscoutFoundation/xDrip) and follow instructions on nightscout ([G4 without share](http://www.nightscout.info/wiki/welcome/nightscout-with-xdrip-wireless-bridge), [G4 share](http://www.nightscout.info/wiki/welcome/nightscout-with-xdrip-and-dexcom-share-wireless), [G5](http://www.nightscout.info/wiki/welcome/nightscout-with-xdrip-and-dexcom-share-wireless/xdrip-with-g5-support)).
+* If not already set up then download [xDrip+](https://github.com/NightscoutFoundation/xDrip) and follow instructions on nightscout ([G4 without share](http://www.nightscout.info/wiki/welcome/nightscout-with-xdrip-wireless-bridge), [G4 share](http://www.nightscout.info/wiki/welcome/nightscout-with-xdrip-and-dexcom-share-wireless), [G5](http://www.nightscout.info/wiki/welcome/nightscout-with-xdrip-and-dexcom-share-wireless/xdrip-with-g5-support)).
 * In xdrip go to Settings > Interapp Compatibility > Broadcast Data Locally and select ON.
 * In xdrip go to Settings > Interapp Compatibility > Accept Treatments and select OFF.
 * If you want to be able to use AndroidAPS to calibrate then in xdrip go to Settings > Interapp Compatibility > Accept Calibrations and select ON.  You may also want to review the options in Settings > Less Common Settings > Advanced Calibration Settings.
@@ -34,7 +45,7 @@ _If using Glimp..._<br>
 * Select Glimp in ConfigBuilder (setting in AndroidAPS).
 
 **For users of MM640g or MM630g:**<br>
-* If not already set up then download [600SeriesAndroidUploaer](http://pazaan.github.io/600SeriesAndroidUploader/) and follow instructions on [nightscout](http://www.nightscout.info/wiki/welcome/nightscout-and-medtronic-640g).
+* If not already set up then download [600 Series Android Uploader](http://pazaan.github.io/600SeriesAndroidUploader/) and follow instructions on [Nightscout](http://www.nightscout.info/wiki/welcome/nightscout-and-medtronic-640g).
 * In 600 Series Uploader go to Settings > Send to xdrip+ and select ON (tick).
 * Select MM640g in ConfigBuilder (setting in AndroidAPS).
 
