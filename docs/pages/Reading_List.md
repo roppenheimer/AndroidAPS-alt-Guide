@@ -10,6 +10,8 @@ Before you build your rig you're going to do a lot of reading up to understand h
 
 [Loop Docs](https://loopkit.github.io/loopdocs/)
 
+[Understanding the Loop Algorithm](Loop_Algorithm.md)
+
 [DIYPS.org](https://diyps.org/)
 
 [OpenAPS Reference Design](https://openaps.org/reference-design/)
@@ -41,3 +43,8 @@ Search for #wearenotwaiting
 ## Press Articles
 
 [The $250 Biohack That’s Revolutionizing Life With Diabetes](http://androidaps-altguide.readthedocs.io/en/latest/pages/Reading_List.html) - Bloomberg
+
+## Position Statements on DIP Artificial Panchreas systems
+
+[Diabetes Australia - People with type 1 diabetes and
+Do It Yourself (DIY) technology solutions](https://static.diabetesaustralia.com.au/s/fileassets/diabetes-australia/ee67e929-5ffc-411f-b286-1ca69e181d1a.pdf)
