@@ -25,7 +25,7 @@ _If you are using the patched Dexcom G5 app..._<Br>
 * Download the .apk file from [here](https://github.com/dexcomapp/dexcomapp). This version works whether you are using mg/dl or mmol/l.
 * Select Dexcom G5 App in ConfigBuilder
 
-_If you are using a G4 with USB OTG cable and Nightscout uploader ('traditional' Nightscout)…_<br>
+_If you are using a G4 with a USB OTG (On-The-Go) cable and Nightscout uploader ('traditional' Nightscout)…_<br>
 
 This option relies on the Nightscout uploader loading your BG values to the Nightscout server and then configuring AndroidAPS to draw its BG data from Nightscout. Clearly for this to work requires a live internet connection.
 * Download and set up the Nightscout Uploader app from the Play Store and follow instructions on [Nightscout](http://www.nightscout.info/wiki/welcome/basic-requirements).
