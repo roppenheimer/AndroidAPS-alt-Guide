@@ -1,6 +1,6 @@
 # BG sources
 
-AndroidAPS needs a source of blood glucose information. This generally would be in the form on an app which links to your CGM device and sends the data to to AndroidAPS. There are a number of choices:
+AndroidAPS needs a source of blood glucose information. This generally would be in the form of an app which links to your CGM device and sends the data to to AndroidAPS. There are a number of choices:
 
   * __xDrip+__ (most people's preferred option) can link to Dexcom G5 and G6 CGMs, the Freestyle Libre via a Bluetooth adapter such as MiaoMiao, the Medtronic 640G and the Medtrum A6. The quality of the data from these different devices varies and some of the advanced features of AndroidAPS can only be used with the "cleaner" CGM sources such as the Dexcom. xDrip+ also integrates well with Nightscout.
   * __Dexcom G5 app__ this is a modified version of the app provided by Dexcom which has been patched so that it will interface with AndroidAPS and pass the data on.
