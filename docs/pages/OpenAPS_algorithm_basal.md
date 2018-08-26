@@ -8,7 +8,7 @@ Firstly, OpenAPS assumes that your programmed basal rates are correct and that i
 
 Because it knows your pump history and the rate that insulin decays - or is "used up" - it can mantain a running total of all previous insulin doses (boluses and TBRs) to give an IOB figure relative to your programmed basal level.
 
-In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor. The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). 
+In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. Having calculated the correction "bolus" it then calculates the temporary basal that would be needed to deliver that over 30 minutes and sets that on the pump. The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor. 
 
 So ideally the following would always be true:
 
