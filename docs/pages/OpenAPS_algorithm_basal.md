@@ -50,15 +50,15 @@ These lines are helpful in understanding, at a glance, *why* OpenAPS is making t
 
 ## OpenAPS algorithm examples
 
-### Scenario 1 - BG predicted to drop below safety threshold
+### Scenario 1 - BG predicted to drop below safety threshold longer term
 
-Here although BG is rising it is predicted that BG (minGuardBG) will drop below the safety threshold in the longer term. OpenAPS will issue a zero temp, until the eventualBG (in any time frame) is above threshold.
+Here although BG is rising in the short term it is predicted that BG (minGuardBG) will drop below the safety threshold in the longer term. OpenAPS will issue a zero temp, until the eventualBG (in any time frame) is above threshold.
 
 ![Dosing scenario 1](../images/Dosing_scenario_1.png)
 
-### Scenario 2 - Zero temp for safety
+### Scenario 2 - BG dropping and predicted to go below safety threshold short term
 
-In this example, BG is predicted to go low in the near-term, although you are predicted to eventually be above target. However, because the near-term low is actually below the safety threshold, OpenAPS will issue a zero temp, until there is no longer any point of the prediction line that is below threshold.
+BG is currently dropping and is predicted to go low in the near-term, although you are predicted to eventually be above target. However, because the near-term low is actually below the safety threshold, OpenAPS will issue a zero temp, until there is no longer any point of the prediction line that is below threshold.
 
 ![Dosing scenario 2](../images/Dosing_scenario_2.png)
 
