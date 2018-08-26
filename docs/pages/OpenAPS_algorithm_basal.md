@@ -32,62 +32,32 @@ What OpenAPS does is to look at the upward pressure on BG and use that to estima
 OpenAPS uses the rate at which insulin is being used up to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop under the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as the "IOB" prediction. If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
 
 
-# Blood Glucose Impact, Carb Impact and Deviations
 
 
 
+  [Understanding Insulin on Board (IOB) Calculations](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html)
 
 
+  ![Estimating carb impact](../images/Carb_predictions.jpg)
+  
+You may also see information about settings, either from your pump or from your `preferences.json` file, that are limiting the insulin dosing decisions that OpenAPS would otherwise make. Make sure to [read the preferences page](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html) before you set up OpenAPS to understand what settings you have by default, and know how to get back to that page if you ever see a setting displayed in your pill. There is also [a handy chart with examples](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html#a-few-examples) to help you understand how settings may impact the dosing output.
 
 
+## Understanding the coloured prediction lines
+
+On your AndroidAPS Overview screen, if you enable Predictions, you will see a number of coloured prediction lines. (You can see the same lines in Nightscout if you enable OpenAPS predictions, but they are all in purple.) These lines show you the different BG predictions based on current carb absorption (COBpredBG); insulin only (IOBpredBG); how long it will take BG to level off at/above target if deviations suddenly cease and we run a zero temp until then (ZTpredBG) and optionally: unannounced meal/effect detection (UAMpredBG).
+
+These lines are helpful in understanding, at a glance, *why* OpenAPS is making the decisions it is, based on your near-term and longer-term BG predictions.
+
+![Example prediction lines](../images/Prediction_lines.png)
+
+  * `COBpredG` - (orange) prediction based the current level of carb absorption. This line only appears if you have carbs on board (COB > 0)
+  * `ZTpredG` - (light blue) prediction based on Zero Temp from now on.
+  * `IOBpredG` - (dark blue) prediction based on IOB alone.
+  * `UAMpredBG` - (yellow) prediction based on current deviations ramping down to zero at the same rate they have been recently. This line is only present if UAM is turned on in the preferences.
 
 
-
---------------
-
-
-
-
-
-
->The core, lowest level logic behind any oref0 implementation of OpenAPS can be found in [`oref0/lib/determine-basal/determine-basal.js`](https://github.com/openaps/oref0/blob/master/lib/determine-basal/determine-basal.js). That code pulls together the required inputs (namely, recent CGM readings, current pump settings, including insulin on board and carbohydrates consumed, and your profile settings) and performs the calculations to make the recommended changes in temp basal rates that OpenAPS could/will enact.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## OpenAPS decision inputs
-
-In OpenAPS, we take the same inputs you would use to manually decide what to do, but we also factor other things into our calculation.
-
-This includes:
-
-* Blood glucose information
-  * `delta` = change in BG between `glucose` (most recent BG) and an average of BG value from between 2.5 and 7.5 minutes ago (usually just a single BG value from 5 minutes ago)
-  * `glucose` = most recent BG
-  * `short_avgdelta` = change in BG between `glucose` (most recent BG) and an average of BG values from between 2.5 and 17.5 minutes ago (that average represents what BG levels were approximately 10 minutes ago)
-  * `long_avgdelta` = change in BG between `glucose` (most recent BG) and an average of BG values from between 17.5 and 42.5 minutes ago (that average represents what BG levels were approximately 30 minutes ago)
-
-* Past insulin dosing information, pulled from your pump
-  * `iob` = Units of Insulin on Board (IOB), ***net*** of your pre-programmed basal rates. Net IOB takes all pre-programmed basal, OpenAPS temp basal, and bolus insulin into account. Note: `iob` can be negative when OpenAPS temp basal rate is below your pre-programmed basal rate (referred to as "low-temping"). *This will always be different than pump-calculated IOB, because it only takes into account boluses - ignore pump IOB.* This is a high level overview, but you can dive into more detail around how insulin activity is calculated [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
-  * `basaliob` = Units of ***net*** basal Insulin on Board (IOB). This value does not include the IOB effects of boluses; just the difference between OpenAPS temp basal rates and your pre-programmed basal rates. As such, this value can be negative when OpenAPS has set a low-temp basal rate. 
-  * `bolusiob` = Units of bolus Insulin on Board. Does not take into account any temp basals.
+# Other terms you may come across
 
 * We also add other calculations that we do to better predict and analyze what is happening:
   * `BGI` (Blood Glucose Impact) = the degree to which BG “should” be rising or falling based on insulin activity alone.
@@ -105,27 +75,6 @@ This includes:
   * `Carb Impact` = we estimate carb impact by looking at what we predict to happen with your carbs entered (`predCI`) and adding it to our estimate of the remaining carb impact (`remainingCI`)
 
 
-  [Understanding Insulin on Board (IOB) Calculations](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html)
-
-
-  ![Estimating carb impact](../Images/Carb_predictions.jpg)
-  
-You may also see information about settings, either from your pump or from your `preferences.json` file, that are limiting the insulin dosing decisions that OpenAPS would otherwise make. Make sure to [read the preferences page](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html) before you set up OpenAPS to understand what settings you have by default, and know how to get back to that page if you ever see a setting displayed in your pill. There is also [a handy chart with examples](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/preferences-and-safety-settings.html#a-few-examples) to help you understand how settings may impact the dosing output.
-
-## OpenAPS decision outputs
-
-After taking into account all of the above, oref0 will put out a recommendation of what needs to be done. This also includes the explanation of the variables above, so you can check and assess if you think it's doing the right thing. Generally, it will display all of the above values, plus the output of the decision of any temporary basal rates and/or boluses it decides it needs. This is the "reason" field.
-
-* Temp basals will be displayed with the `duration` (length of time temp basal will run. A duration of 0 indicates none is running) and `rate` (units/hr basal rate).
-* You may also see `insulinReq`, showing how much insulin is needed. This usually displays when OpenAPS is prepping to issue SMB's ([an advanced setting](http://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/oref1.html)).
-
-## Understanding the purple prediction lines
-
-Once you enable forecast display in your Nightscout configuration, you will be able to see multiple purple line predictions.  To do this, click the three dots next to your timeframe horizon (3HR, 6HR, 12HR, 24HR) and then enable "Show OpenAPS Forecasts".  Once enabled, you will have multiple purple line predictions in Nightscout. These purple lines show you the different predictions based on current carb absorption; insulin only; (optional feature: unannounced meal/effect detection); and showing how long it will take BG to level off at/above target if deviations suddenly cease and we run a zero temp until then.
-
-These purple lines are helpful in understanding, at a glance, *why* OpenAPS is making the decisions it is, based on your near-term and longer-term BG predictions.
-
-![Purple prediction line examples](../Images/Prediction_lines.jpg)
 
 ## OpenAPS algorithm examples
 
