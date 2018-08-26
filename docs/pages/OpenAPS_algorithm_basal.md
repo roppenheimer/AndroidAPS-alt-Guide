@@ -50,7 +50,7 @@ These lines are helpful in understanding, at a glance, *why* OpenAPS is making t
 
 ## OpenAPS algorithm examples
 
-### Scenario 1 - Zero Temp for safety
+### Scenario 1 - BG predicted to drop below safety threshold
 
 Here although BG is rising it is predicted that BG (minGuardBG) will drop below the safety threshold in the longer term. OpenAPS will issue a zero temp, until the eventualBG (in any time frame) is above threshold.
 
