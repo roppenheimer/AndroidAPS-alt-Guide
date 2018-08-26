@@ -70,7 +70,7 @@ Although the near-term prediction shows a dip below target it does not dip below
 
 ### Scenario 4 - BG rising but eventualBG below target
 
-In this example, OpenAPS sees that you are spiking well above your target. However, due to the timing of insulin, you already have enough in your body to bring you into range eventually. In fact, you are predicted to eventually be below target. Therefore, OpenAPS will not provide extra insulin so it does not contribute to a low in the longer-timeframe. Even though your BG is rising, a low or zero temporary basal rate will be called for.
+In this example, OpenAPS sees that you are spiking well above your target. However, due to the timing of insulin, you already have enough in your body to bring you into range eventually. In fact, you are predicted to eventually be below target. Therefore, to prevent contributing to a low in the longer-timeframe OpenAPS will not provide extra insulin. Even though your BG is rising OpenAPS will issue a low or zero temporary basal rate.
 
 ![Dosing scenario 4](../images/Dosing_scenario_4.png)
 
