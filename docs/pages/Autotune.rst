@@ -247,8 +247,8 @@ Each deviation is allocated to *one* of several different contributing factors:
   In the example below, carbs and insulin are delivered at 10:05. All carbs are absorbed by 11:35 but deviations stay positive until 12:00, so all deviations from 10:05 to 11:55 are classed as CSF.
 
 .. raw:: html
-   <div id="csf_chart"></div>
    
+   <div id="csf_chart"></div>
    <script type="text/javascript">
    drawChart("csf_chart", { time: 1, carbs: 20 }, { time: 1, insulin: 10 }, [ 100, 102, 110, 120, 135, 140, 143, 144, 130, 118, 112, 102, 98, 96, 95, 94, 95, 97, 100, 102, 105, 104, 101, 98, 92, 90, 89, 86, 85, 84, 82, 80 ]);
    </script>
