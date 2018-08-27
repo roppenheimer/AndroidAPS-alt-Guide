@@ -28,26 +28,82 @@ For each reading it is also possible to calculate the amount of insulin that wou
 
 The deviation is the difference between the actual BG delta and the BGI.
 
-+-------------------------+-------+-------+-------+-------+-------+
-| Time                    | 10:00 | 10:05 | 10:10 | 10:15 | 10:20 |
-+=========================+=======+=======+=======+=======+=======+
-| BG                      | 100   | 102   | 104   | 103   | 100   |
-+-------------------------+-------+-------+-------+-------+-------+
-| Delta                   | 0     | 2     | 2     | -1    | -3    |
-| `Curr. BG - Prev. BG`   |       |       |       |       |       |
-+-------------------------+-------+-------+-------+-------+-------+
-| IOB                     | 1.0   | 0.99  | 0.97  | 0.95  | 0.93  |
-+-------------------------+-------+-------+-------+-------+-------+
-| Insulin Activity (IA)   | 0.00  | 0.01  | 0.02  | 0.02  | 0.02  |
-| `Prev. IOB - Curr. IOB` |       |       |       |       |       |
-+-------------------------+-------+-------+-------+-------+-------+
-| BGI                     | 0.00  | 1.8   | 3.6   | 3.6   | 3.6   |
-| `-IA * ISF`             |       |       |       |       |       |
-| Assuming ISF of 180     |       |       |       |       |       |
-+-------------------------+-------+-------+-------+-------+-------+
-| Deviation               | 0     | 0.2   | -1.6  | -1.6  | -6.6  |
-| `Delta - BGI`           |       |       |       |       |       |
-+-------------------------+-------+-------+-------+-------+-------+
+<table>
+    <thead>
+        <tr>
+            <th>Time</th>
+            <th>10:00</th>
+            <th>10:05</th>
+            <th>10:10</th>
+            <th>10:15</th>
+            <th>10:20</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>BG</th>
+            <td>100</td>
+            <td>102</td>
+            <td>104</td>
+            <td>103</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <th>
+                Delta<br />
+                `Curr. BG - Prev. BG`
+            </th>
+            <td>0</td>
+            <td>2</td>
+            <td>2</td>
+            <td>-1</td>
+            <td>-3</td>
+        </tr>
+        <tr>
+            <th>IOB</th>
+            <td>1.0</td>
+            <td>0.99</td>
+            <td>0.97</td>
+            <td>0.95</td>
+            <td>0.93</td>
+        </tr>
+        <tr>
+            <th>
+                Insulin Activity (IA)<br />
+                `Prev. IOB - Curr. IOB`
+            </td>
+            <td>0.00</td>
+            <td>0.01</td>
+            <td>0.02</td>
+            <td>0.02</td>
+            <td>0.02</td>
+        </tr>
+        <tr>
+            <th>
+                BGI<br />
+                `-IA * ISF`<br />
+                Assuming ISF of 180
+            </th>
+            <td>0.00</td>
+            <td>-1.8</td>
+            <td>-3.6</td>
+            <td>-3.6</td>
+            <td>-3.6</td>
+        </tr>
+        <tr>
+            <th>
+                Deviation<br />
+                `Delta - BGI`
+            </th>
+            <td>0.0</td>
+            <td>3.8</td>
+            <td>5.6</td>
+            <td>5.6</td>
+            <td>2.6</td>
+            <td>0.6</td>
+        </tr>
+    </tbody>
+</table>
 
 Each deviation is allocated to *one* of several different contributing factors:
 
@@ -63,9 +119,7 @@ var drawChart = function(chartId, carbs, bolus, bg) {
     data.addColumn('number', 'Dev');
     data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
     
-    //
     // Taken from https://github.com/Perceptus/GlucoDyn/blob/master/js/glucodyn/algorithms.js
-    //
     //scheiner gi curves fig 7-8 from Think Like a Pancreas, fit with a triangle shaped absorbtion rate curve
     //see basic math pdf on repo for details
     //g is time in minutes,gt is carb type
