@@ -118,12 +118,11 @@ var drawChart = function(chartId, carbs, bolus, bg) {
     data.addColumn('number', 'Expected BG');
     data.addColumn('number', 'Dev');
     data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
-    
+    // Taken from https://github.com/Perceptus/GlucoDyn/blob/master/js/glucodyn/algorithms.js
     //scheiner gi curves fig 7-8 from Think Like a Pancreas, fit with a triangle shaped absorbtion rate curve
     //see basic math pdf on repo for details
     //g is time in minutes,gt is carb type
     function cob(g,ct) {  
-      
       if(g<=0) {
         tot=0.0
       } else if (g>=ct) {
@@ -134,7 +133,6 @@ var drawChart = function(chartId, carbs, bolus, bg) {
         tot=-1.0+4.0/ct*(g-Math.pow(g,2)/(2.0*ct))
         return(tot);
     }
-    
     //g is time in minutes from bolus event, idur=insulin duration
     //walsh iob curves
     function iob(g,idur) {  
@@ -157,13 +155,11 @@ var drawChart = function(chartId, carbs, bolus, bg) {
       }          
       return(tot);
     }
-    
     var isf = 18;
     var expectedBG = bg[0];
     var basal = 5;
     var csf = false;
     var uam = false;
-    
     var addRow = function(i) {
         var b = bg[i];
         var bPrev = i == 0 ? b : bg[i-1];
@@ -176,7 +172,6 @@ var drawChart = function(chartId, carbs, bolus, bg) {
         var bgi = -(insPrev - ins) * isf;
         var dev = delta - bgi;
         var tt = "<p>Dev: <b>" + (Math.round(dev * 100) / 100) + "</b>";
-        
         if (c > 0) {
             tt += "<br/>Classification: <b>CSF</b></p><hr/><p>COB &gt; 0";
             csf = true;
@@ -186,7 +181,6 @@ var drawChart = function(chartId, carbs, bolus, bg) {
         }
         else {
             csf = false;
-            
             if (ins > basal || dev > 6 || uam) {
                 if (dev > 0) {
                     uam = true;
@@ -194,9 +188,7 @@ var drawChart = function(chartId, carbs, bolus, bg) {
                 else {
                     uam = false;
                 }
-                
                 tt += "<br/>Classification: <b>UAM</b></p><hr/><p>";
-                
                 if (ins > basal)
                     tt += "IOB &gt; basal";
                 else if (dev > 6)
@@ -207,23 +199,17 @@ var drawChart = function(chartId, carbs, bolus, bg) {
                     tt += "Dev &lt;= 0 so finishing UAM";
             }
         }
-        
         tt += "</p>";
-        
         expectedBG += bgi;
-        
         if (expectedBG < 0)
             expectedBG = 0;
-        
         var time = 10 * 60 + i * 5;
         var hour = Math.floor(time / 60);
         var minutes = time % 60;
         data.addRow([ [ hour, minutes, 0 ], b, ins, c, expectedBG, dev, "<div style='padding: 4px'>" + tt + "</div>" ])
     }
-    
     for (var i = 0; i < bg.length; i++)
         addRow(i);
-    
     var options = {
         width: 900,
         height: 500,
@@ -241,9 +227,7 @@ var drawChart = function(chartId, carbs, bolus, bg) {
         },
         tooltip: {isHtml: true}
     };
-    
     var chart = new google.visualization.LineChart(document.getElementById(chartId));
-    
     chart.draw(data, options);
 }
 </script>
