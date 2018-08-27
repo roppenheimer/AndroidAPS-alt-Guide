@@ -119,7 +119,6 @@ var drawChart = function(chartId, carbs, bolus, bg) {
     data.addColumn('number', 'Dev');
     data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
     
-    // Taken from https://github.com/Perceptus/GlucoDyn/blob/master/js/glucodyn/algorithms.js
     //scheiner gi curves fig 7-8 from Think Like a Pancreas, fit with a triangle shaped absorbtion rate curve
     //see basic math pdf on repo for details
     //g is time in minutes,gt is carb type
