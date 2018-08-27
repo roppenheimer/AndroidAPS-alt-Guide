@@ -18,11 +18,181 @@ Autotune will start with the profile that you give it, then run the following pr
 
 ## Categorization
 
-Autotune takes the BG entries from Nightscout, along with carbs and insulin (boluses and temp basal records). It looks at the difference between each consecutive BG entry and uses the associated carbs and insulin data to determine why the change between the two BG entries was what it was.
+Autotune takes the BG entries from Nightscout, along with carbs and insulin (boluses and temp basal records). It looks at the difference between the actual and expected changes between each consecutive BG entry and uses the associated carbs and insulin data to determine why the change between the two BG entries was what it was.
 
-Each "deviation" (difference between two consecutive BG readings) is allocated to *one* of several different contributing factors:
+### Deltas and Deviations
 
-* **CSF** - if there are COB, or while the deviations stay positive (BG keeps rising) after COB reaches 0, those deviations are logged against the carb sensitivity factor (CSF)
+In a sequence of BG readings, the delta is the difference between a BG reading and the preceding reading.
+
+For each reading it is also possible to calculate the amount of insulin that would have taken effect since the preceding reading. Multiplying this amount of insulin activity by the insulin sensitivity factor (ISF) gives the expected change in BG (called by Blood Glucose Impact, or BGI).
+
+The deviation is the difference between the actual BG delta and the BGI.
+
+| Time | 10:00 | 10:05 | 10:10 | 10:15 | 10:20 |
+|------|-------|-------|-------|-------|-------|
+| BG   | 100   | 102   | 104   | 103   | 100   |
+| Delta<br />`Curr. BG - Prev. BG` | 0 | 2 | 2 | -1 | -3 |
+| IOB  | 1.0   | 0.99  | 0.97  | 0.95  | 0.93  |
+| Insulin Activity (IA)<br />`Prev. IOB - Curr. IOB` | 0.00 | 0.01 | 0.02 | 0.02 | 0.02 |
+| BGI<br />`-IA * ISF`<br />Assuming ISF of 180 | 0.00 | 1.8 | 3.6 | 3.6 | 3.6 |
+| Deviation<br />`Delta - BGI` | 0 | 0.2 | -1.6 | -1.6 | -6.6 |
+
+Each deviation is allocated to *one* of several different contributing factors:
+
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
+<script type="text/javascript">
+var drawChart = function(chartId, carbs, bolus, bg) {
+    var data = new google.visualization.DataTable();
+    data.addColumn('timeofday', 'Time');
+    data.addColumn('number', 'BG (mg/dL)');
+    data.addColumn('number', 'IOB (U)');
+    data.addColumn('number', 'COB (g)');
+    data.addColumn('number', 'Expected BG');
+    data.addColumn('number', 'Dev');
+    data.addColumn({ type: 'string', role: 'tooltip', p: { html: true } });
+    
+    //
+    // Taken from https://github.com/Perceptus/GlucoDyn/blob/master/js/glucodyn/algorithms.js
+    //
+    //scheiner gi curves fig 7-8 from Think Like a Pancreas, fit with a triangle shaped absorbtion rate curve
+    //see basic math pdf on repo for details
+    //g is time in minutes,gt is carb type
+    function cob(g,ct) {  
+      
+      if(g<=0) {
+        tot=0.0
+      } else if (g>=ct) {
+        tot=1.0
+      } else if ((g>0)&&(g<=ct/2.0)) {
+        tot=2.0/Math.pow(ct,2)*Math.pow(g,2)
+      } else 
+        tot=-1.0+4.0/ct*(g-Math.pow(g,2)/(2.0*ct))
+        return(tot);
+    }
+    
+    //g is time in minutes from bolus event, idur=insulin duration
+    //walsh iob curves
+    function iob(g,idur) {  
+      if(g<0.0) {
+        tot=0.0  
+      } else if(g==0.0) {
+        tot=100.0
+      } else if (g>=idur*60.0) {
+        tot=0.0
+      } else {
+        if(idur==3) {
+          tot=-3.203e-7*Math.pow(g,4)+1.354e-4*Math.pow(g,3)-1.759e-2*Math.pow(g,2)+9.255e-2*g+99.951
+        } else if (idur==4) {
+          tot=-3.31e-8*Math.pow(g,4)+2.53e-5*Math.pow(g,3)-5.51e-3*Math.pow(g,2)-9.086e-2*g+99.95
+        } else if (idur==5) {
+          tot=-2.95e-8*Math.pow(g,4)+2.32e-5*Math.pow(g,3)-5.55e-3*Math.pow(g,2)+4.49e-2*g+99.3
+        } else if (idur==6) {
+          tot=-1.493e-8*Math.pow(g,4)+1.413e-5*Math.pow(g,3)-4.095e-3*Math.pow(g,2)+6.365e-2*g+99.7
+        } 
+      }          
+      return(tot);
+    }
+    
+    var isf = 18;
+    var expectedBG = bg[0];
+    var basal = 5;
+    var csf = false;
+    var uam = false;
+    
+    var addRow = function(i) {
+        var b = bg[i];
+        var bPrev = i == 0 ? b : bg[i-1];
+        var delta = b - bPrev;
+        var c = i < carbs.time ? 0 : carbs.carbs * (1 - cob((i - carbs.time) * 5, 90));
+        var ins = bolus.insulin * iob((i - bolus.time) * 5, 3) / 100;
+        if (i == bolus.time)
+            ins -= bolus.insulin;
+        var insPrev = bolus.insulin * iob((i - bolus.time - 1) * 5, 3) / 100;
+        var bgi = -(insPrev - ins) * isf;
+        var dev = delta - bgi;
+        var tt = "<p>Dev: <b>" + (Math.round(dev * 100) / 100) + "</b>";
+        
+        if (c > 0) {
+            tt += "<br/>Classification: <b>CSF</b></p><hr/><p>COB &gt; 0";
+            csf = true;
+        }
+        else if (csf && dev > 0) {
+            tt += "<br/>Classification: <b>CSF</b></p><hr/><p>COB = 0 but Dev &gt; 0 so continuing previous CSF";
+        }
+        else {
+            csf = false;
+            
+            if (ins > basal || dev > 6 || uam) {
+                if (dev > 0) {
+                    uam = true;
+                }
+                else {
+                    uam = false;
+                }
+                
+                tt += "<br/>Classification: <b>UAM</b></p><hr/><p>";
+                
+                if (ins > basal)
+                    tt += "IOB &gt; basal";
+                else if (dev > 6)
+                    tt += "Dev &gt; 6";
+                else if (uam)
+                    tt += "Dev &gt; 0 so continuing previous UAM";
+                else
+                    tt += "Dev &lt;= 0 so finishing UAM";
+            }
+        }
+        
+        tt += "</p>";
+        
+        expectedBG += bgi;
+        
+        if (expectedBG < 0)
+            expectedBG = 0;
+        
+        var time = 10 * 60 + i * 5;
+        var hour = Math.floor(time / 60);
+        var minutes = time % 60;
+        data.addRow([ [ hour, minutes, 0 ], b, ins, c, expectedBG, dev, "<div style='padding: 4px'>" + tt + "</div>" ])
+    }
+    
+    for (var i = 0; i < bg.length; i++)
+        addRow(i);
+    
+    var options = {
+        width: 900,
+        height: 500,
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1, lineWidth: 1},
+          2: {targetAxisIndex: 1, lineWidth: 1},
+          3: {targetAxisIndex: 0, lineDashStyle: [4, 4]},
+          4: {targetAxisIndex: 1}
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: '', minValue: 0},
+          1: {title: '', minValue: 0}
+        },
+        tooltip: {isHtml: true}
+    };
+    
+    var chart = new google.visualization.LineChart(document.getElementById(chartId));
+    
+    chart.draw(data, options);
+}
+</script>
+
+* **CSF** - if there are COB, or while the deviations stay positive (BG is rising quicker or not falling as fast as expected based on IOB) after COB reaches 0, those deviations are logged against the carb sensitivity factor (CSF)
+
+  In the example below, carbs and insulin are delivered at 10:05. All carbs are absorbed by 11:35 but deviations stay positive until 12:00, so all deviations from 10:05 to 11:55 are classed as CSF.
+
+<div id="csf_chart"></div>
+
+<script type="text/javascript">
+drawChart("csf_chart", { time: 1, carbs: 20 }, { time: 1, insulin: 10 }, [ 100, 102, 110, 120, 135, 140, 143, 144, 130, 118, 112, 102, 98, 96, 95, 94, 95, 97, 100, 102, 105, 104, 101, 98, 92, 90, 89, 86, 85, 84, 82, 80 ]);
+</script>
+
 * **UAM** - if there is more IOB than the current hourly basal rate, or the deviation was more than 6 mg/dL, those deviations are logged against unannounced meals (UAM)
 * **basal** - if the expected impact on BG of basal insulin is 4 or more times that of the net IOB, or the BG is rising, those deviations are logged against basals
 * **ISF** - if the BG is falling and the the expected impact on BG of the net IOB is at least a quarter of the basal insulin, those deviations are logged against the insulin sensitivity factory (ISF)
