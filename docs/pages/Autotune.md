@@ -2,7 +2,9 @@
 
 Autotune is an application which will read the data that has accumulated in your Nightscout server and help you to analyse it, giving you suggestions as to how to adjust your basal rates, your sensitivity and your carb ratios. As with Nightscout you can either [set up your own](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autotune.html) using the freely available code or you can use a [ready built online service](https://autotuneweb.azurewebsites.net/)
 
-> As Nightscout is the only source of data for Autotune, it's important that the data in Nightscout is complete. If you don't log all of your carb intake for example, Autotune is likely to produce misleading results.
+.. warning::
+
+   As Nightscout is the only source of data for Autotune, it's important that the data in Nightscout is complete. If you don't log all of your carb intake for example, Autotune is likely to produce misleading results.
 
 ## Profiles & Basals
 
@@ -267,7 +269,9 @@ If less insulin is needed, the basal rates for the previous 3 hours are reduced 
 
 Finally, some hours will not have any deviations in the basal category, e.g. because all the deviations were allocated to carb absorption. In these cases, the basal recommendation will be based on the first hour before and after that were adjusted, taking 80% of the current basal setting for this hour plus 10% of each adjacent autotuned hour.
 
-> Note that this last point means that hours that are routinely dominated by carb absorption will over time have their basal rates set to an average of the surrounding hours. If you do have an underlying need for higher or lower basal rates than normal at these times as well, Autotune will combine these changes with your CSF. While those changes may work for these times, it can lead to a dangerously high carb ratio for other times.
+.. warning::
+   
+   Note that this last point means that hours that are routinely dominated by carb absorption will over time have their basal rates set to an average of the surrounding hours. If you do have an underlying need for higher or lower basal rates than normal at these times as well, Autotune will combine these changes with your CSF. While those changes may work for these times, it can lead to a dangerously high carb ratio for other times.
 
 ## Autotuning ISF
 
