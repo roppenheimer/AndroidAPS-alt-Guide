@@ -28,7 +28,7 @@ For each reading it is also possible to calculate the amount of insulin that wou
 
 The deviation is the difference between the actual BG delta and the BGI.
 
-<table>
+<table class="wy-table wy-table-striped">
     <thead>
         <tr>
             <th>Time</th>
@@ -41,7 +41,7 @@ The deviation is the difference between the actual BG delta and the BGI.
     </thead>
     <tbody>
         <tr>
-            <th>BG</th>
+            <th style="text-align: left">BG</th>
             <td>100</td>
             <td>102</td>
             <td>104</td>
@@ -49,9 +49,9 @@ The deviation is the difference between the actual BG delta and the BGI.
             <td>100</td>
         </tr>
         <tr>
-            <th>
+            <th style="text-align: left">
                 Delta<br />
-                `Curr. BG - Prev. BG`
+                <code>Curr. BG - Prev. BG</code>
             </th>
             <td>0</td>
             <td>2</td>
@@ -60,7 +60,7 @@ The deviation is the difference between the actual BG delta and the BGI.
             <td>-3</td>
         </tr>
         <tr>
-            <th>IOB</th>
+            <th style="text-align: left">IOB</th>
             <td>1.0</td>
             <td>0.99</td>
             <td>0.97</td>
@@ -68,10 +68,10 @@ The deviation is the difference between the actual BG delta and the BGI.
             <td>0.93</td>
         </tr>
         <tr>
-            <th>
+            <th style="text-align: left">
                 Insulin Activity (IA)<br />
-                `Prev. IOB - Curr. IOB`
-            </td>
+                <code>Prev. IOB - Curr. IOB</code>
+            </th>
             <td>0.00</td>
             <td>0.01</td>
             <td>0.02</td>
@@ -79,9 +79,9 @@ The deviation is the difference between the actual BG delta and the BGI.
             <td>0.02</td>
         </tr>
         <tr>
-            <th>
+            <th style="text-align: left">
                 BGI<br />
-                `-IA * ISF`<br />
+                <code>-IA * ISF</code><br />
                 Assuming ISF of 180
             </th>
             <td>0.00</td>
@@ -91,13 +91,12 @@ The deviation is the difference between the actual BG delta and the BGI.
             <td>-3.6</td>
         </tr>
         <tr>
-            <th>
+            <th style="text-align: left">
                 Deviation<br />
-                `Delta - BGI`
+                <code>Delta - BGI</code>
             </th>
             <td>0.0</td>
             <td>3.8</td>
-            <td>5.6</td>
             <td>5.6</td>
             <td>2.6</td>
             <td>0.6</td>
