@@ -116,6 +116,7 @@ The deviation is the difference between the actual BG delta and the BGI.
 Each deviation is allocated to *one* of several different contributing factors:
 
 .. raw:: html
+   
    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
    <script type="text/javascript">
    var drawChart = function(chartId, carbs, bolus, bg) {
