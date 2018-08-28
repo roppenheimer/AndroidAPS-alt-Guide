@@ -8,7 +8,7 @@ __Example__
 Your sensitivity is shown as 70% meaning that you are less sensitive to insulin than usual. So your ISF which is normally 3.5 is now multiplied by 0.7 and becomes 2.45. This means that the loop expects less response from each unit of insulin than it normally would and so to achieve the desired effect it delivers a larger dose by a factor of 1/0.7. Your BG target is also reduced by the same factor. So if your normal target is 5.5 mmol/l this is now reduced  to 3.85mmol/l so that the loop will work harder to bring your BG down.
 
 
-Autosense looks at each BG data point for the last 24 hours and calculates the delta (actual observed change) over the last 5 minutes. It then compares it to “BGI” (blood glucose impact, which is how much BG *should* be dropping from insulin alone), and assesses the “deviations” (differences between the delta and BGI)
+In order to calculate this ratio Autosense looks at each BG data point for the last 24 hours and calculates the delta (actual observed change) over the last 5 minutes. It then compares it to “BGI” (blood glucose impact, which is how much BG *should* be dropping from insulin alone), and assesses the “deviations” (differences between the delta and BGI)
 
 Each deviation is then classified as follows:
 
