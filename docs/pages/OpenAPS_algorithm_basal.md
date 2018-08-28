@@ -8,13 +8,13 @@ Firstly, OpenAPS assumes that your programmed basal rates are correct and that i
 
 Because it knows your pump history and the rate that insulin decays - or is "used up" - it can mantain a running total of all previous insulin doses (boluses and TBRs) to give an IOB figure relative to your programmed basal level.
 
-In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much IOB you need to bring your IOB eventually back to target. It then adjusts your IOB upwards or downwards by increasing or decreasing your basal rate to achieve the desired result. Having calculated the correction "bolus" it then calculates the temporary basal that would be needed to deliver that over 30 minutes and sets that on the pump. The result of this calculation is an estimate of the "eventual blood glucose" (eventualBG). It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor. 
+In order to calculate a correction that will bring BG back to the desired target level it uses your insulin sensitivity factor (ISF) to calculate how much more or less IOB you need to bring your eventual BG back to target - the "eventual blood glucose" (eventualBG). Having calculated the appropriate correction "bolus" it calculates the temporary basal rate that would deliver that amount over 30 minutes and sets that on the pump. It repeats this calculation and updates the results every five minutes when it gets a fresh BG reading from your sensor. 
 
 So ideally the following would always be true:
 
     BG - ISF x IOB = eventualBG = targetBG.
 
-By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is the right amount of insulin on board (IOB) to bring BG eventually to the preconfigured target.
+By constantly reviewing this equation and issuing temporary basal rates (TBRs) we can ensure that there is always the right amount of insulin on board (IOB) to bring BG eventually to the preconfigured target.
 
 ![](../images/basal_adjustment.png)
 
