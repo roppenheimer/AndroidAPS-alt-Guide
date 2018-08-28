@@ -2,6 +2,8 @@
 
 Sensitivity is an advanced feature of OpenAPS which enables the loop to respond more or less aggressively depending on how blood glucose is responding to the insulin inputs. Generally it looks at the response over a period of time (hours) and responds accordingly.
 
+Sensitivity in this context might be better termed "resistance" - if Autosense is less than 100% you are less resistant to insulin than usual and the loop will be less aggressive. If the figure is more than 100% then the loop will react more strongly. To make the loop respond more strongly Autosense will make the ISF number smaller and also reduce your target BG. This causes the rig to deliver more insulin than usual. The reverse is also true, a senstivity figure of greater than 100% makes the ISF number bigger and raises the target BG.
+
 It looks at each BG data point for the last 24 hours and calculates the delta (actual observed change) over the last 5 minutes. It then compares it to “BGI” (blood glucose impact, which is how much BG *should* be dropping from insulin alone), and assesses the “deviations” (differences between the delta and BGI)
 
 Each deviation is then classified as follows:
