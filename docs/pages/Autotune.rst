@@ -244,7 +244,7 @@ Each deviation is allocated to *one* of several different contributing factors:
 
 * **CSF** - if there are COB, or while the deviations stay positive (BG is rising quicker or not falling as fast as expected based on IOB) after COB reaches 0, those deviations are logged against the carb sensitivity factor (CSF)
 
-  In the example below, carbs and insulin are delivered at 10:05. All carbs are absorbed by 11:35 but deviations stay positive until 12:00, so all deviations from 10:05 to 11:55 are classed as CSF.
+  In the example below, carbs and insulin are delivered at 10:05. All carbs are absorbed by 11:35 but deviations stay positive until 12:00, so all deviations from 10:05 to 11:55 are classed as CSF. Move your mouse over the purple deviation line to see an explanation of the categorisation at each data point.
 
 .. raw:: html
    
@@ -254,7 +254,17 @@ Each deviation is allocated to *one* of several different contributing factors:
    </script>
 
 * **UAM** - if there is more IOB than the current hourly basal rate, or the deviation was more than 6 mg/dL, those deviations are logged against unannounced meals (UAM)
-* **basal** - if the expected impact on BG of basal insulin is 4 or more times that of the net IOB, or the BG is rising, those deviations are logged against basals
+
+  In the example below, carbs are not logged but the BG starts rising rapidly and then bolus insulin is delivered at 10:30. All deviations from when the BG starts rising until the IOB has reduced to below the basal level are classed as UAM.
+  
+.. raw:: html
+   
+   <div id="uam_chart"></div>
+   <script type="text/javascript">
+   drawChart("uam_chart", { time: 0, carbs: 0 }, {time: 5, insulin: 10 }, [ 100, 102, 110, 120, 135, 140, 143, 144, 130, 118, 112, 102, 98, 96, 95, 94, 95, 97, 100, 102, 105, 104, 101, 98, 92, 90, 89, 86, 85, 84, 82, 80 ]);
+   </script>
+
+   * **basal** - if the expected impact on BG of basal insulin is 4 or more times that of the net IOB, or the BG is rising, those deviations are logged against basals
 * **ISF** - if the BG is falling and the the expected impact on BG of the net IOB is at least a quarter of the basal insulin, those deviations are logged against the insulin sensitivity factory (ISF)
 
 After completing this process, some of the deviations will be moved to the other categories:
