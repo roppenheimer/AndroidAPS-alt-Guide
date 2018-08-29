@@ -261,7 +261,7 @@ Each deviation is allocated to *one* of several different contributing factors:
    
    <div id="uam_chart"></div>
    <script type="text/javascript">
-   drawChart("uam_chart", { time: 0, carbs: 0 }, {time: 5, insulin: 10 }, [ 100, 102, 110, 120, 135, 140, 143, 144, 130, 118, 112, 102, 98, 96, 95, 94, 95, 97, 100, 100, 98, 92, 90, 89, 86, 85, 84, 82, 80, 76, 72, 68, 67 ]);
+   drawChart("uam_chart", { time: 0, carbs: 0 }, {time: 5, insulin: 10 }, [ 100, 102, 110, 120, 135, 140, 143, 144, 130, 118, 112, 102, 98, 96, 95, 94, 95, 97, 100, 100, 98, 92, 90, 89, 86, 85, 82, 80, 76, 72, 64, 62, 60 ]);
    </script>
 
    * **basal** - if the expected impact on BG of basal insulin is 4 or more times that of the net IOB, or the BG is rising, those deviations are logged against basals
