@@ -1,5 +1,7 @@
 # Sensitivity Detection and COB options
 
+### Understanding how Autosense sensitivity works
+
 Sensitivity is an advanced feature of OpenAPS which enables the loop to respond more or less aggressively depending on how blood glucose is responding to the insulin inputs. Generally it looks at the response over a period of time (hours) and responds accordingly.
 
 Sensitivity in this context is viewed from the point of view of the loop's response - if Autosense is less than 100% you are more sensitive to insulin than usual and the loop needs to be less aggressive than usual (<100%). If the figure is more than 100% then you are more resistant and the loop will react more strongly (>100%). To make the loop respond more strongly Autosense makes the ISF number smaller, increases your basals and also reduces your target BG all by the same factor. This causes the rig to deliver more insulin than usual. The reverse is also true, a sensitivity figure of less than than 100% makes the ISF number bigger, reduces the basals and raises the target BG.
