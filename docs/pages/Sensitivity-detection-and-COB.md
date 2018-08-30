@@ -14,7 +14,7 @@ In order to calculate this ratio Autosense looks at each BG data point for the l
 
 Each deviation is then classified as follows:
 
-“x” : deviation is excluded because it is unexpectedly high - normally because of carb absorbtion. All deviations when there is COB are excluded until such time as the COB drops to zero (carbs are fully absorbed) and deviations go negative once again. This is appropriate to eliminate the impact of rising BG due to carb absorption from sensitivity calculations and not falsely attribute it to insulin resistance. Deviations may also be excluded because of an unexplained high deviation (site failure, etc).
+“x” : deviation is excluded because it is unexpectedly high - normally because of carb absorbtion. All deviations when there is COB are excluded until such time as the COB drops to zero (carbs are fully absorbed) and deviations go negative once again. This is intended to eliminate the impact of rising BG due to carb absorption from sensitivity calculations and not falsely attribute it to insulin resistance. Deviations may also be excluded because of an unexplained high deviation (site failure, etc).
 
 “+” : deviation was above what was expected (i.e. actual BG > estimated BG)
 
@@ -22,7 +22,7 @@ Each deviation is then classified as follows:
 
 “=” : BGI is doing what we expect. Neutral deviations are also added every 2h to help decay sensitivityRatio back toward 1 if all data is excluded.
 
-Normally the sensitivityRatio == 1.0 - if it increases then temporary basal rates (TBR) will be increased and the Insulin Sensitivity Factor (ISF) is reduced to make the loop respond more aggressively.
+Normally the sensitivityRatio == 100% - if it increases then temporary basal rates (TBR) will be increased and the Insulin Sensitivity Factor (ISF) is reduced to make the loop respond more aggressively.
 
 There are three sensitivity detection modes which can be selected:
 
@@ -32,9 +32,9 @@ There are three sensitivity detection modes which can be selected:
 
 ### Sensitivity Oref0
 
-This works as per the Oref0 model as described in [Oref0 documentation](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html#auto-sensitivity-mode-autosens). Basically sensitivity is calculated from the previous 24 hours worth of data. A maximum duration for carbs is set in the preferences and after that time all carbs are assumed to have been absorbed. The two setting here are:
+This works as per the Oref0 model as described in [Oref0 documentation](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html#auto-sensitivity-mode-autosens). Basically sensitivity is calculated from the previous 24 hours worth of data. A maximum duration for carbs is set in the preferences and after that time all carbs are assumed to have been absorbed and BG data can be included inot the sensivity calculations once more. The two setting here are:
 
-  * min_5min_carbimpact - this is the assumed minimum impact that carb absorbtion has on BG in 5 minutes. Used for predicting future BG.
+  * min_5min_carbimpact - this is the assumed minimum impact that carb absorbtion has on BG in 5 minutes. This is effectively a safety setting and it allows carbs to "leak" down to zero over time so that the loop does not wrongly assume that there are still carbs present and respond accordingly.
   * Meal max absorbtion time (h) - this is the time by which all carbs are assumed to have been absorbed.
 
 Upper and lower limits to the sensitivityRatio can also be set - (default 0.7 - 1.2)
