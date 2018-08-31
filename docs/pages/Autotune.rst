@@ -209,7 +209,7 @@ Each deviation is allocated to *one* of several different contributing factors:
                    else
                        tt += "Dev &lt;= 0 so finishing UAM";
                }
-			   else if (delta > 0 && delta > -2 * bgi || basalBGI > -4 * BGI) {
+			   else if (delta > 0 && delta > -2 * bgi || basalBGI > -4 * bgi) {
 					tt += "<br/>Classification: <b>basal</b></p><br/><p>";
 					if (delta > 0 && delta > -2 * bgi)
 						tt += "BG is rising";
