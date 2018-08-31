@@ -181,6 +181,7 @@ Each deviation is allocated to *one* of several different contributing factors:
            var insPrev = bolus.insulin * iob((i - bolus.time - 1) * 5, 3) / 100;
            var bgi = -(insPrev - ins) * isf;
            var dev = delta - bgi;
+		   var basalBGI = Math.round(( basal * sens / 60 * 5 )*100)/100; // U/hr * mg/dL/U * 1 hr / 60 minutes * 5 = mg/dL/5m
            var tt = "<p>Dev: <b>" + (Math.round(dev * 100) / 100) + "</b>";
            if (c > 0) {
                tt += "<br/>Classification: <b>CSF</b></p><hr/><p>COB &gt; 0";
@@ -208,6 +209,16 @@ Each deviation is allocated to *one* of several different contributing factors:
                    else
                        tt += "Dev &lt;= 0 so finishing UAM";
                }
+			   else if (delta > 0 && delta > -2 * bgi || basalBGI > -4 * BGI) {
+					tt += "<br/>Classification: <b>basal</b></p><br/><p>";
+					if (delta > 0 && delta > -2 * bgi)
+						tt += "BG is rising";
+					else
+						tt += "BGI < Basal BGI";
+			   }
+			   else {
+					tt += "<br/>Classification: <b>ISF</b>";
+			   }
            }
            tt += "</p>";
            expectedBG += bgi;
@@ -264,8 +275,27 @@ Each deviation is allocated to *one* of several different contributing factors:
    drawChart("uam_chart", { time: 0, carbs: 0 }, {time: 5, insulin: 10 }, [ 100, 102, 110, 120, 135, 140, 143, 144, 130, 118, 112, 102, 98, 96, 95, 94, 95, 97, 100, 100, 98, 92, 90, 89, 86, 85, 82, 80, 76, 72, 64, 62, 60 ]);
    </script>
 
-   * **basal** - if the expected impact on BG of basal insulin is 4 or more times that of the net IOB, or the BG is rising, those deviations are logged against basals
+* **basal** - if the expected impact on BG of basal insulin is 4 or more times that of the net IOB, or the BG is rising, those deviations are logged against basals
+  
+  In the example below, carbs are not logged, the BG rises gently and a small bolus is administered to reduce it. All deviations for the period are classed as basal.
+  
+.. raw:: html
+  
+  <div id="basal_chart"></div>
+  <script type="text/javascript">
+   drawChart("basal_chart", { time: 1, carbs: 0 }, { time: 10, insulin: 1 }, [ 100, 102, 103, 104, 105, 107, 109, 110, 111, 111, 112, 111, 109, 108, 108, 107, 106, 106, 105, 105, 105, 104, 104, 103, 103, 102, 102, 102, 101, 100, 100, 101 ]);
+  </script>
+
 * **ISF** - if the BG is falling and the the expected impact on BG of the net IOB is at least a quarter of the basal insulin, those deviations are logged against the insulin sensitivity factory (ISF)
+  
+  In the example below, the BG starts off high and a bolus is administered to reduce it. All deviations while the BG is falling after the bolus are classed as ISF.
+  
+.. raw:: html
+  
+  <div id="isf_chart"></div>
+  <script type="text/javascript">
+   drawChart("isf_chart", { time: 1, carbs: 0 }, { time: 10, insulin: 10 }, [ 150, 152, 153, 154, 155, 157, 159, 160, 161, 161, 162, 161, 159, 158, 157, 154, 150, 144, 140, 133, 127, 122, 119, 115, 112, 109, 106, 104, 103, 102, 101, 100 ]);
+  </script>
 
 After completing this process, some of the deviations will be moved to the other categories:
 
