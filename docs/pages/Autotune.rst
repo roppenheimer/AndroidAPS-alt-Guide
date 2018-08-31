@@ -294,7 +294,7 @@ Each deviation is allocated to *one* of several different contributing factors:
   
   <div id="isf_chart"></div>
   <script type="text/javascript">
-   drawChart("isf_chart", { time: 1, carbs: 0 }, { time: 10, insulin: 10 }, [ 150, 152, 153, 154, 155, 157, 159, 160, 161, 161, 162, 161, 159, 158, 157, 154, 150, 144, 140, 133, 127, 122, 119, 115, 112, 109, 106, 104, 103, 102, 101, 100 ]);
+   drawChart("isf_chart", { time: 1, carbs: 0 }, { time: 10, insulin: 5 }, [ 150, 152, 153, 154, 155, 157, 159, 160, 161, 161, 162, 161, 159, 158, 157, 154, 150, 144, 140, 133, 127, 122, 119, 115, 112, 109, 106, 104, 103, 102, 101, 100 ]);
   </script>
 
 After completing this process, some of the deviations will be moved to the other categories:
