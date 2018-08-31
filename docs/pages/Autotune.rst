@@ -181,7 +181,7 @@ Each deviation is allocated to *one* of several different contributing factors:
            var insPrev = bolus.insulin * iob((i - bolus.time - 1) * 5, 3) / 100;
            var bgi = -(insPrev - ins) * isf;
            var dev = delta - bgi;
-		   var basalBGI = Math.round(( basal * sens / 60 * 5 )*100)/100; // U/hr * mg/dL/U * 1 hr / 60 minutes * 5 = mg/dL/5m
+		   var basalBGI = Math.round(( basal * isf / 60 * 5 )*100)/100; // U/hr * mg/dL/U * 1 hr / 60 minutes * 5 = mg/dL/5m
            var tt = "<p>Dev: <b>" + (Math.round(dev * 100) / 100) + "</b>";
            if (c > 0) {
                tt += "<br/>Classification: <b>CSF</b></p><hr/><p>COB &gt; 0";
