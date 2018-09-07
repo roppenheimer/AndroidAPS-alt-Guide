@@ -24,6 +24,8 @@ Each deviation is then classified as follows:
 
 Normally the sensitivityRatio == 100% - if it increases then temporary basal rates (TBR) will be increased and the Insulin Sensitivity Factor (ISF) is reduced to make the loop respond more aggressively.
 
+Times when there are carbs on board cannot be included in the sensitivity calculation so we need a way of filtering those times out. After all carbs have been absorbed BG data can be included into the sensitivity calculations once more.
+
 There are three sensitivity detection modes which can be selected:
 
   * Sensitivity Oref0
@@ -32,7 +34,7 @@ There are three sensitivity detection modes which can be selected:
 
 ### Sensitivity Oref0
 
-This works as per the Oref0 model as described in [Oref0 documentation](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html#auto-sensitivity-mode-autosens). Basically sensitivity is calculated from the previous 24 hours worth of data. A maximum duration for carbs is set in the preferences and after that time all carbs are assumed to have been absorbed and BG data can be included inot the sensivity calculations once more. The two setting here are:
+This works as per the Oref0 model as described in [Oref0 documentation](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html#auto-sensitivity-mode-autosens). Basically sensitivity is calculated from the previous 24 hours worth of data. A maximum life for carbs is set in the preferences and after that time all carbs are assumed to have been absorbed. The two settings here are:
 
   * min_5min_carbimpact - this is the assumed minimum impact that carb absorbtion has on BG in 5 minutes. This is effectively a safety setting and it allows carbs to "leak" down to zero over time so that the loop does not wrongly assume that there are still carbs present and respond accordingly.
   * Meal max absorbtion time (h) - this is the time by which all carbs are assumed to have been absorbed.
@@ -41,32 +43,34 @@ Upper and lower limits to the sensitivityRatio can also be set - (default 0.7 - 
 
 #### Example - Oref0
 
-Oref0 - the assumed effect of unabsorbed carbs is cut off after the specified maximum time
+> Oref0 - the assumed effect of unabsorbed carbs is truncated after a specified maximum time
 
 ![COB from oref0](../images/cob_oref0.png)
 
 ### Sensitivity AAPS
 
-Sensitivity is calculated the same way like Oref0 but you can specify time to the past. Minimal carbs absorption is calculated from max carbs absorption time from preferences
+Sensitivity is calculated the same way as Oref0 but you can specify how far back in time the algorithm will look. Minimal carbs absorption is calculated from the maximum carbs absorption time specified in the preferences. So our two settings are:
 
-  * Meal max absorbtion time (h)
+  * Meal max absorption time (h)
   * Interval for autosense (h)
   
 #### Example - Sensitivity AAPS
 
-Here the effect of COB is tapered down over time such that `COB == 0` after the specified Meal max absorbtion time
+> Here the effect of COB is tapered down over time such that `COB == 0` after the specified Meal max absorption time
 
 ![COB from AAPS](../images/cob_aaps.png)
 
-If minimal carbs absorption is used instead of value calculated from deviations, a green dot appears on COB graph
+If minimal carbs absorption is used instead of value calculated from deviations, a green dot appears on the COB graph
 
 
 ### Sensitivity WeightedAverage
 
-Sensitivity is calculated as a weighted average from deviations. Deviations are calculated from the difference between the actual BG and that predicted by the algorithm. You can read a fuller description here: [OpenAPS decision inputs](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/Understand-determine-basal.html#openaps-decision-inputs) Newer deviations have higher weight. Minimal carbs absorption is calculated from max carbs absorption time from preferences. This algorithm is fastest in following sensitivity changes.
+This method is the fastest way to track sensitivity changes.
+
+Sensitivity is calculated based on a weighted average of recent deviations. Deviations are calculated as the difference between the actual BG and that predicted by the algorithm.  Newer deviations carry a greater weight in determining the sensitivity. The minimum rate of carb absorption is calculated from max carbs absorption time specified in the preferences. 
 
 
   * Meal max absorbtion time (h)
   * Interval for autosense (h)
 
-
+You can read a fuller description here: [OpenAPS decision inputs](https://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/Understand-determine-basal.html#openaps-decision-inputs).
