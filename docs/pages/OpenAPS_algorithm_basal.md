@@ -49,7 +49,7 @@ These lines are helpful in understanding, at a glance, *why* OpenAPS is making t
   * `COBpredG` - (orange) prediction based on the current level of carb absorption. This line only appears if you have carbs on board (COB > 0)
   * `ZTpredG` - (light blue) prediction based on Zero Temp from now on.
   * `IOBpredG` - (dark blue) prediction based on IOB alone with no carb absorption.
-  * `UAMpredBG` - (yellow) prediction based on current deviations ramping down to zero at the same rate they have been recently. This line is only present if UAM is turned on in the preferences.
+  * `UAMpredBG` - (yellow) prediction based on current deviations but ramping down to zero at the same rate they have been recently. This line is only present if UAM is turned on in the preferences.
 
 
 
