@@ -25,11 +25,17 @@ You can read in greater detail about how OpenAPS calculates the amount of IOB [h
 
 ## Adding in the carbs
 
-We now need to take into account the effect of carbohydrates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know, different carbs are absorbed at different rates, and other factors, such as the amount of exercise, all have an effect - so we need something more dynamic. 
+We now need to take into account the effect of carbohydrates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know - unlike insulin which is absorbed in a fairly predictable way - different carbs are absorbed at different rates, and other factors, such as the amount of exercise, all have an effect - so we need something more dynamic.
+
+The theory is that fast acting carbs will exert a strong upward pressure on BG but for a relatively short time, whereas slower acting carbs exert less pressure but for a longer time.
 
 What OpenAPS does is to look at the upward pressure on BG and use that to estimate the rate at which carbs are being absorbed and then use that to estimate the rate at which insulin is needed to balance that upward pressure.
 
+Of course, there are other things that can affect the upward pressure on BG, such as exercise. The problem here is that potentially the algorithm could be left thinking that there are still carbs on board when they have actually all gone. Therefore there is a parameter "min_5min_carbimpact" which acts as a safety valve such that carbs will always leak out of the algorithm at a minimum rate which is roughly equivalent to 24g/hr.
+
 OpenAPS uses the rate at which insulin is being used up to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop under the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as the "IOBpredBG" prediction. If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
+
+Clearly when there are carbs on board they will dominate the demand for insulin, which will be much reduced when there are no carbs. The trick is to ensure that there is a smooth transition between the two states.
 
 
 ## Understanding the coloured prediction lines
