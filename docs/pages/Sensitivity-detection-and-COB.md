@@ -24,7 +24,7 @@ Each deviation is then classified as follows:
 
 Normally the sensitivityRatio == 100% - if it increases then temporary basal rates (TBR) will be increased and the Insulin Sensitivity Factor (ISF) is reduced to make the loop respond more aggressively.
 
-Because times when there are carbs on board cannot be included in the sensitivity calculation so we need a way of excluding those times. When all carbs have been absorbed BG data can once more be included into the sensitivity calculations.
+Because times when there are carbs on board cannot be included in the sensitivity calculation we need a way of excluding those times. When all carbs have been absorbed BG data can once more be included into the sensitivity calculations.
 
 There are four sensitivity detection modes which can be selected. Each has a different way of assessing sensitivity and deciding which data to exclude because carbs are present:
 
