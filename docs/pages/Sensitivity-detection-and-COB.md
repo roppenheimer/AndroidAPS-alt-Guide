@@ -4,6 +4,8 @@
 
 Sensitivity is an advanced feature of OpenAPS which enables the loop to respond more or less aggressively depending on how blood glucose is responding to the insulin inputs. Generally it looks at the response over a period of time (hours) and responds accordingly.
 
+Autosense only includes data points where there are no active carbs, and so part of the calculation is to determine when carbs are active so that these points can be excluded.
+
 Sensitivity in this context is viewed from the point of view of the loop's response - if Autosense is less than 100% you are more sensitive to insulin than usual and the loop needs to be less aggressive than usual (<100%). If the figure is more than 100% then you are more resistant and the loop will react more strongly (>100%). To make the loop respond more strongly Autosense makes the ISF number smaller, increases your basals and also reduces your target BG all by the same factor. This causes the rig to deliver more insulin than usual. The reverse is also true, a sensitivity figure of less than than 100% makes the ISF number bigger, reduces the basals and raises the target BG.
 
 __Example__
@@ -37,8 +39,8 @@ There are four sensitivity detection modes which can be selected. Each has a dif
 
 This works as per the Oref0 model as described in [Oref0 documentation](https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autosens.html#auto-sensitivity-mode-autosens). Basically sensitivity is calculated from the previous 24 hours worth of data. To exclude times where there are carbs on board a maximum life for carbs is set in the preferences and after that time all carbs are assumed to have been absorbed. The two settings here are:
 
-  * min_5min_carbimpact - this is the assumed minimum impact that carb absorbtion has on BG in 5 minutes. This is effectively a safety setting and it allows carbs to "leak" down to zero over time so that the loop does not wrongly assume that there are still carbs present and respond accordingly.
-  * Meal max absorbtion time (h) - this is the time by which all carbs are assumed to have been absorbed.
+  * min_5min_carbimpact - this is the assumed minimum impact that carb absorption has on BG in 5 minutes. This is effectively a safety setting and it allows carbs to "leak" down to zero over time so that the loop does not wrongly assume that there are still carbs present and respond accordingly.
+  * Meal max absorption time (h) - this is the time by which all carbs are assumed to have been absorbed.
 
 Upper and lower limits to the sensitivityRatio can also be set - (default 0.7 - 1.2)
 
