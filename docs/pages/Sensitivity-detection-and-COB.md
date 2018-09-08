@@ -1,4 +1,4 @@
-# Sensitivity Detection and COB options
+# Sensitivity Detection and COB calculations
 
 ### Understanding how Autosense sensitivity works
 
