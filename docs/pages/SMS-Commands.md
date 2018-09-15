@@ -10,7 +10,8 @@ On your Android phone setting go to Applications > AndroidAPS > Permissions and 
 
 In AndroidAPS go to Preferences > SMS Communicator and enter the phone number(s) that you will allow SMS commands to come from and also enable 'Allow remote commands via SMS'
 
-Send a SMS to the phone with AndroidAPS running from your approved phone number(s) using any of the commands in the table below, the ANdroidAPS phone will respond to confirm success of command or status request.
+Send a SMS to the phone with AndroidAPS running from your approved phone number(s) using any of the commands in the table below, the AndroidAPS phone will respond to confirm success of command or status request.
+
 
 <table class="tg">
   <tr>
