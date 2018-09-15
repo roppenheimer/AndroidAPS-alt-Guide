@@ -19,7 +19,6 @@ Send a SMS to the phone with AndroidAPS running from your approved phone number(
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 
-
 <table class="tg">
   <tr>
     <th class="tg-0pky">Command</th>
