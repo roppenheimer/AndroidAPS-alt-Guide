@@ -62,15 +62,15 @@ Send a SMS to the phone with AndroidAPS running from your approved phone number(
   </tr>
   <tr>
     <td class="tg-0pky">BASAL STOP/CANCEL</td>
-    <td class="tg-0pky">To stop temp basal reply with code EmF</td>
+    <td class="tg-0pky">To stop temp basal reply with code EMF</td>
   </tr>
   <tr>
     <td class="tg-0pky">BASAL 0.3</td>
-    <td class="tg-0pky">To start basal 0.3U/h reply with code Swe<br>Remote basal setting is not allowed (if remote commands not allowed)</td>
+    <td class="tg-0pky">To start basal 0.3U/h reply with code SWE<br>Remote basal setting is not allowed (if remote commands not allowed)</td>
   </tr>
   <tr>
     <td class="tg-0pky">BOLUS 1.2</td>
-    <td class="tg-0pky">To deliver bolus 1.2U reply with code Rrt<br>Remote bolus not allowed (if within 15 min after last bolus command or remote commands not allowed)</td>
+    <td class="tg-0pky">To deliver bolus 1.2U reply with code RRT<br>Remote bolus not allowed (if within 15 min after last bolus command or remote commands not allowed)</td>
   </tr>
   <tr>
     <td class="tg-0pky">CAL 5.6</td>
