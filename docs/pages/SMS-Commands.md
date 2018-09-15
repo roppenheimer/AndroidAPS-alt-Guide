@@ -70,10 +70,10 @@ Send a SMS to the phone with AndroidAPS running from your approved phone number(
   </tr>
   <tr>
     <td class="tg-0pky">BOLUS 1.2</td>
-    <td class="tg-0pky">To deliver bolus 1.2U reply with code Rrt<br>Remote bolus not allowed (if within 15 min after last bolus command or remote commands not allowed<br>)</td>
+    <td class="tg-0pky">To deliver bolus 1.2U reply with code Rrt<br>Remote bolus not allowed (if within 15 min after last bolus command or remote commands not allowed)</td>
   </tr>
   <tr>
     <td class="tg-0pky">CAL 5.6</td>
-    <td class="tg-0pky">To send calibration 5.6 reply with code Rrt<br>Calibration sent (if xDrip is installed. Accepting calibrations must be enabled in xDrip+<br>)</td>
+    <td class="tg-0pky">To send calibration 5.6 reply with code Rrt<br>Calibration sent (if xDrip is installed. Accepting calibrations must be enabled in xDrip+)</td>
   </tr>
 </table>
