@@ -13,21 +13,67 @@ In AndroidAPS go to Preferences > SMS Communicator and enter the phone number(s)
 Send a SMS to the phone with AndroidAPS running from your approved phone number(s) using any of the commands in the table below, the ANdroidAPS phone will respond to confirm success of command or status request.
 
 
-
-
-| Command            | Response                                                                                                                                         |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| BG                 | Last BG: 5.6 4min ago, Delta: -0,2 mmol, IOB: 0.20U (Bolus: 0.10U Basal: 0.10U)                                                                  |
-| LOOP STOP/DISABLE  | Loop has been disabled                                                                                                                           |
-| LOOP START/ENABLE  | Loop has been enabled                                                                                                                            |
-| LOOP STATUS        | Loop is disabled Loop is enabled Suspended (10 min)                                                                                              |
-| LOOP SUSPEND 20    | Loop suspended for 20 minutes                                                                                                                    |
-| LOOP RESUME        | Loop resumed                                                                                                                                     |
-| TREATMENTS REFRESH | TREATMENTS REFRESH 1 receivers                                                                                                                   |
-| NSCLIENT RESTART   | NSCLIENT RESTART 1 receivers                                                                                                                     |
-| DANAR / PUMP       | Last conn: 1 minago Temp: 0.00U/h @11:38 5/30min IOB: 0.5U Reserv: 34U Batt: 100                                                                 |
-| BASAL STOP/CANCEL  | To stop temp basal reply with code EmF                                                                                                           |
-| BASAL 0.3          | To start basal 0.3U/h reply with code Swe Remote basal setting is not allowed (if remote commands not allowed)                                   |
-| BOLUS 1.2          | To deliver bolus 1.2U reply with code Rrt Remote bolus not allowed (_if within 15 min after last bolus command or remote commands not allowed_ ) |
-| CAL 5.6            | To send calibration 5.6 reply with code Rrt Calibration sent (_if xDrip is installed. Accepting calibrations must be enabled in xDrip+_ )        |
-
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0pky">Command</th>
+    <th class="tg-0pky">Response</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">BG</td>
+    <td class="tg-0pky">Last BG: 5.6 4min ago, Delta: -0,2 mmol, IOB: 0.20U (Bolus: 0.10U Basal: 0.10U)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">LOOP STOP/DISABLE</td>
+    <td class="tg-0pky">Loop has been disabled</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">LOOP START/ENABLE</td>
+    <td class="tg-0pky">Loop has been enabled</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">LOOP STATUS</td>
+    <td class="tg-0pky">Loop is disabled<br>Loop is enabled<br>Suspended (10 min)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">LOOP SUSPEND 20</td>
+    <td class="tg-0pky">Loop suspended for 20 minutes</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">LOOP RESUME</td>
+    <td class="tg-0pky">Loop resumed</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">TREATMENTS REFRESH</td>
+    <td class="tg-0pky">TREATMENTS REFRESH 1 receivers</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">NSCLIENT RESTART</td>
+    <td class="tg-0pky">NSCLIENT RESTART 1 receivers</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">DANAR / PUMP</td>
+    <td class="tg-0pky">Last conn: 1 minago Temp: 0.00U/h @11:38 5/30min IOB: 0.5U Reserv: 34U Batt: 100</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">BASAL STOP/CANCEL</td>
+    <td class="tg-0pky">To stop temp basal reply with code EmF</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">BASAL 0.3</td>
+    <td class="tg-0pky">To start basal 0.3U/h reply with code Swe<br>Remote basal setting is not allowed (if remote commands not allowed)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">BOLUS 1.2</td>
+    <td class="tg-0pky">To deliver bolus 1.2U reply with code Rrt<br>Remote bolus not allowed (_if within 15 min after last bolus command or remote commands not allowed_<br>)</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">CAL 5.6</td>
+    <td class="tg-0pky">To send calibration 5.6 reply with code Rrt<br>Calibration sent (_if xDrip is installed. Accepting calibrations must be enabled in xDrip+_<br>)</td>
+  </tr>
+</table>
