@@ -28,7 +28,7 @@ The predictions lines if you have them selected are:
 
   * ORANGE (COB) predicts where your BG will go based on the current pump settings and assuming that the deviations due carb absorption remain constant. This line only appears if there are known COB. 
   * The DARK BLUE line (IOB) shows what would happen under the influence of insulin only. For example if you dialled in some insulin and then didn't eat any carbs. 
-  * LIGHT BLUE line (Zero Temp)shows how the IOB trajectory would change if the pump stopped all insulin delivery (0% TBR).
+  * LIGHT BLUE line (Zero Temp) shows how the IOB trajectory line would change if the pump stopped all insulin delivery (0% TBR).
   * The DARK YELLOW (UAM) line (if present) is (UnAnnounced Meal). It is similar to the ORANGE COB line but it assumes that the deviations will taper down at a constant rate (by extending the current rate of reduction).
 
 > In this context a DEVIATION is the difference in BG caused the upward pressure of carb absorption relative to insulin alone. Deviations are used as a proxy for carb absorbtion and are discussed in greater detail elsewhere in this documentation.
