@@ -23,7 +23,7 @@ Fig 1: Basals are constantly adjusted so that BG - ISF x IOB = targetBG
 
 You can read in greater detail about how OpenAPS calculates the amount of IOB [here](http://openaps.readthedocs.io/en/latest/docs/While%20You%20Wait%20For%20Gear/understanding-insulin-on-board-calculations.html).
 
-## Adding in the carbs
+## Dynamic carb detection
 
 We now need to take into account the effect of carbohydrates. One way to do this would be to estimate a rate at which carbs are absorbed and then try to work out an appropriate rate to deliver insulin by using the insulin to carb ratio (IC). However, as we know - unlike insulin which is absorbed in a fairly predictable way - different carbs are absorbed at different rates, and other factors, such as the amount of exercise, all have an effect - so we need something more dynamic.
 
@@ -31,9 +31,11 @@ The theory is that fast acting carbs will exert a strong upward pressure on BG b
 
 What OpenAPS does is to look at the upward pressure on BG and use that to estimate the rate at which carbs are being absorbed and then use that to estimate the rate at which insulin is needed to balance that upward pressure.
 
-Of course, there are other things that can affect the upward pressure on BG, such as exercise. The problem here is that potentially the algorithm could be left thinking that there are still carbs on board when they have actually all gone. Therefore there is a parameter "min_5min_carbimpact" which acts as a safety valve such that carbs will always leak out of the algorithm at a minimum rate which is roughly equivalent to 24g/hr.
+OpenAPS firstly calculates the effect that it would expect the alone insulin on board to have on BG. It does this by calculating the amount of insulin that would have been used since the last BG reading (normally 5 minutes) and multiplying it by ISF. This gives the Blood Glucose Impact (BGI). It then looks at the actual change in BG, referred to as the Delta. (It actually calculates this using a number of previous BG readings so as to minimise the impact of random fluctuations.) The difference between the Delta and the BGI is now referred to as a deviation.
 
-OpenAPS uses the rate at which insulin is being used up to calculate an expected blood glucose impact (BGI) - which is the rate at which BG would be expected to drop under the influence of insulin alone. You can see this on your AndroidAPS or Nightscout predictions screen as the "IOBpredBG" prediction. If the actual change in BG differs from this is it referred to as a "deviation" - which can be either positive or negative - and is influenced by carb absorption, exercise and other factors. The deviation is then used together with the insulin to carb ratio (IC) to determine how insulin delivery needs to be adjusted.
+Small positive deviations may happen for any number of reasons, but larger ones are assumed to be as the result of carb absorption and from this OpenAPS estimates the amount of carb absorption that has occured and hence the amount of insulin required to compensate using the insulin to carb (IC) ratio.
+
+Of course, there are other things that can affect the upward pressure on BG, such as exercise. The problem here is that potentially the algorithm could be left thinking that there are still carbs on board when they have actually all gone. Therefore there is a parameter "min_5min_carbimpact" which acts as a safety valve such that carbs will always leak out of the algorithm at a minimum rate which is roughly equivalent to 24g/hr.
 
 Clearly when there are carbs on board they will dominate the demand for insulin, which will be much reduced when there are no carbs. The trick is to ensure that there is a smooth transition between the two states.
 
